@@ -1,10 +1,18 @@
 main {
+    margin-left: 10%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
     h1 {
+        padding: 1rem 2rem;
         background: $geekblue;
         color: $geekwhite;       
     }
 
     section {
+        margin: 1rem 0;
+        padding:  1rem 2rem;
+        border-radius: .5rem 0 0 .5rem;
         background: $lightgray;
         color: $darkblue;
     }

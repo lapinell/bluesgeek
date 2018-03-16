@@ -5,6 +5,14 @@ body {
         font-family: $headerfont;
         font-weight: $bold; 
     }
+    
+    a {
+        color: $geekblue;
+
+        &:hover {
+            color: $geekwhite;
+        }
+    }
 }
 
 header {
