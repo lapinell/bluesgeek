@@ -5,5 +5,14 @@ body {
         font-family: $headerfont;
         font-weight: $bold; 
     }
+}
 
+header {
+    background: $darkblue;
+    color: $geekwhite;
+}
+
+footer {
+    background: $darkblue;
+    color: $geekwhite;
 }
