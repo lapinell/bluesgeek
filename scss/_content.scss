@@ -4,7 +4,6 @@ main {
     align-items: flex-end;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-left: 2rem;
 
     section {
         width: 100%;
@@ -24,9 +23,13 @@ main {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
+    body {
+        background: url(../images/cropped-kim-brock.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
     main {
-        background: $lightgray;
-        align-items: center;
+        align-content: center;
         padding: 0;
 
         &.container {

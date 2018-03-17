@@ -23,6 +23,7 @@ header {
     justify-content: space-between;
     background: $darkblue;
     color: $geekwhite;
+    padding: 1rem;
 
     h1 {
         font-size: 1.3rem;
@@ -34,6 +35,8 @@ footer {
     align-self: stretch;
     background: $darkblue;
     color: $geekwhite;
+    padding: 1rem;
+    font-size: .75rem;
 }
 
 .nopadding {
@@ -44,4 +47,5 @@ footer {
     padding-left: 2rem;
     padding-right: 0;
     flex-grow: 2;
+    max-width: 850px;
 }
