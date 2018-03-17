@@ -1,0 +1,27 @@
+nav {
+    padding-left: 0; 
+    padding-right: 0;
+    background: $darkgray;
+    color: $geekwhite;
+    justify-content: stretch;
+    align-content: stretch;
+
+    ul {
+        align-content: stretch;
+    }
+
+    a {
+        color: $geekwhite;
+        &:hover {
+            color: $geekwhite;
+            background:$mediumgray;
+        }
+        &#signIn {
+            background: $geekblue;
+
+            &:hover {
+                background: $mediumblue;
+            }
+        }
+    }
+}
