@@ -10,14 +10,46 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/lib/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
-<body>
-    <header>
-        <nav></nav>
-        <h1>General Template</h1>
-        <img alt="search by keyword" />
+<body class="container">
+    <header class="row">
+        <button type="button" class="btn btn-default" aria-label="Right Align">
+            <span class="glyphicon glyphicon-menu-hamburger" alt="Search by keyword" aria-hidden="true"></span>
+        </button>
+        <h1 class="col">General Template</h1>
+        <button type="button" class="btn btn-default" aria-label="Right Align">
+            <span class="glyphicon glyphicon-search" alt="Search by keyword" aria-hidden="true"></span>
+        </button>
     </header>
-    <div>
-        <main class="container">
+    <div class="row">
+        <nav class="col">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Talent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Competitions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Policies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign In</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="col container">
             <section class="row title">
                 <h1>Competition Template Title</h1>
             </section>
@@ -40,11 +72,13 @@
             </section>
             <section class="row">
                 <h2>2018 Competition Video</h2>
-                <video alt="2018 BluesGeek Pro-Am Competition"></video>
+                <div>
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4BR68YZeM6s?rel=0" frameborder="0" allowfullscreen></iframe> -->
+                </div>
             </section>
         </main>
     </div>
-    <footer>
+    <footer class="row">
         <div>
             <p>All photographs, media and content appearing on this site are the property of Kenneth Shipp DBA BluesGeek. They are protected by U.S. Copyright Laws, and are not to be downloaded or reproduced in any way without the written permission of Kenneth Shipp. Copyright 2018 BluesGeek/Kenneth Shipp All Rights Reserved.</p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is currently (March 2018) licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

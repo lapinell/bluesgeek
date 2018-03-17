@@ -20,8 +20,14 @@ body {
 
 header {
     align-self: stretch;
+    justify-content: space-between;
     background: $darkblue;
     color: $geekwhite;
+
+    h1 {
+        font-size: 1.3rem;
+        text-align: center;
+        }
 }
 
 footer {
