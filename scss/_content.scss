@@ -25,6 +25,14 @@ main {
     body {
         background: url(../images/cropped-kim-brock.jpg) no-repeat center center fixed;
         background-size: cover;
+    
+        > div.container-fluid {
+            max-width: 850px;
+        }
+    }
+
+    .pageContent {
+        justify-content: center;
     }
 
     main {
