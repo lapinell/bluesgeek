@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
     font-family: $bodyfont;
    
     h1, h2 {
@@ -16,11 +19,13 @@ body {
 }
 
 header {
+    align-self: stretch;
     background: $darkblue;
     color: $geekwhite;
 }
 
 footer {
+    align-self: stretch;
     background: $darkblue;
     color: $geekwhite;
 }

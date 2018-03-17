@@ -1,20 +1,23 @@
 main {
-    margin-left: 10%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    
-    h1 {
-        padding: 1rem 2rem;
-        background: $geekblue;
-        color: $geekwhite;       
-    } 
 
     section {
+        width: 100%;
         margin: 1rem 0;
         padding:  1rem 2rem;
         border-radius: .5rem 0 0 .5rem;
         background: $lightgray;
         color: $darkblue;
+    
+        &.title {
+            background: $geekblue;
+            color: $geekwhite;  
+            border-radius: 0;
+        }
     }
 } 
 
@@ -22,5 +25,17 @@ main {
 @media (min-width: 768px) { 
     main {
         background: $lightgray;
+        align-items: center;
+        padding: 0;
+
+        &.container {
+            padding: 0;
+        }
+
+        section {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
 }
