@@ -18,7 +18,7 @@
             "venue" : "venue 1 id",
             "description" : "The SECOND beginner class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "beginner",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Adam Wilkerson", "Krystal Wilkerson"]
             
         },
@@ -50,7 +50,7 @@
             "venue" : "venue 1 id",
             "description" : "The SECOND intermediate class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "intermediate",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Damon Stone", "Julie Brown"]
             
         },
@@ -93,7 +93,7 @@
             "venue" : "venue 1 id",
             "description" : "The THIRD advanced class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "advanced",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Damon Stone ", "Mike Legenthall"]
             
         }
@@ -117,7 +117,7 @@
             "venue" : "venue 1 id",
             "description" : "The SECOND beginner class on Sunday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "beginner",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Adam Wilkerson", "Krystal Wilkerson"]
             
         },
@@ -128,7 +128,7 @@
             "venue" : "venue 1 id",
             "description" : "The THIRD beginner class on Sunday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "beginner",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Kenneth Shipp", "Krystal Wilkerson"]
             
         },
@@ -160,7 +160,7 @@
             "venue" : "venue 1 id",
             "description" : "The THIRD intermediate class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "intermediate",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Tim O'Neill ", "Julie Brown"]
             
         },
@@ -171,7 +171,7 @@
             "venue" : "venue 1 id",
             "description" : "The FIRST advanced class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
             "level" : "advanced",
-            "track" : "idiom",
+            "track" : "history",
             "instructors" : ["Damon Stone", "Julie Brown"]
         },
         {
