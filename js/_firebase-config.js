@@ -15,3 +15,9 @@ require('firebase/database');
   };
   
   firebase.initializeApp(config);
+
+  firebase.getFBsettings = () => {
+    return config;
+  };
+
+  module.exports = firebase;
