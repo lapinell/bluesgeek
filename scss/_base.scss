@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    font-family: $bodyfont;
+   
+    h1, h2 {
+        font-family: $headerfont;
+        font-weight: $bold; 
+    }
+    
+    a {
+        color: $geekblue;
+
+        &:hover {
+            color: $mediumblue;
+        }
+    }
+}
+
+header {
+    align-self: stretch;
+    justify-content: space-between;
+    background: $darkblue;
+    color: $geekwhite;
+    padding: 1rem;
+
+    h1 {
+        font-size: 1.3rem;
+        text-align: center;
+        }
+}
+
+footer {
+    align-self: stretch;
+    background: $darkblue;
+    color: $geekwhite;
+    padding: 1rem;
+    font-size: .75rem;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.mainContent {
+    padding-left: 2rem;
+    padding-right: 0;
+    flex-grow: 2;
+    max-width: 850px;
+}

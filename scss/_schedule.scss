@@ -1,0 +1,31 @@
+.schedule {
+    background: $geekwhite;
+    & p, h2 {
+        margin-bottom: 0;
+    }
+}
+
+.eventItem {
+    border-bottom: 2px solid $lightgray;
+    .card {
+        background: none;
+        border: none;
+        padding: 1rem 0;
+    }
+
+    button {
+        
+    }
+}
+
+.dateFilter {
+    background: $geekblue;
+    color: $geekwhite;
+
+    #dates{
+        justify-content: space-evenly;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+    }
+}
