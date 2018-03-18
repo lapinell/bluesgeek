@@ -20,8 +20,8 @@ let GETorganizerEvents = (id) => {
 let eventbriteCall = (urlPartial) => {
     $.ajax({
     url: `https://www.eventbriteapi.com/v3/${urlPartial}?token=${eventbriteAPIkey}`
-    }).done( function( organizer ) {
-        console.log('It worked:', organizer);
+    }).done( function( data ) {
+        console.log('It worked:', data);
     });
 };
 

@@ -11,3 +11,7 @@ const shippID = "17088682251";
 let orgShipp = callAPI.GETorganizer(shippID);
 
 callAPI.eventbriteCall(orgShipp);
+
+let pinellEvents = callAPI.GETorganizerEvents(pinellID);
+
+callAPI.eventbriteCall(pinellEvents);
