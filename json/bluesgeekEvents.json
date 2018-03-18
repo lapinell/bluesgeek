@@ -1,0 +1,101 @@
+{
+    "classes" : [
+        {
+            "name" : "Beginner Saturday Class 1",
+            "startTime" : "Saturday May 18, 2019 10:00 AM",
+            "endTime" : "Saturday May 18, 2019 10:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The FIRST beginner class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "beginner",
+            "track" : "idiom",
+            "instructors" : ["Kenneth Shipp", "Amanda Adams"]
+            
+        },
+        {
+            "name" : "Beginner Saturday Class 2",
+            "startTime" : "Saturday May 18, 2019 11:00 AM",
+            "endTime" : "Saturday May 18, 2019 11:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The SECOND beginner class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "beginner",
+            "track" : "idiom",
+            "instructors" : ["Adam Wilkerson", "Krystal Wilkerson"]
+            
+        },
+        {
+            "name" : "Beginner Saturday Class 3",
+            "startTime" : "Saturday May 18, 2019 12:00 PM",
+            "endTime" : "Saturday May 18, 2019 12:50 PM",
+            "venue" : "venue 1 id",
+            "description" : "The THIRD beginner class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "beginner",
+            "track" : "idiom",
+            "instructors" : ["Kenneth Shipp", "Krystal Wilkerson"]
+            
+        },
+        {
+            "name" : "Intermediate Saturday Class 1",
+            "startTime" : "Saturday May 18, 2019 10:00 AM",
+            "endTime" : "Saturday May 18, 2019 10:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The FIRST intermediate class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "intermediate",
+            "track" : "idiom",
+            "instructors" : ["Tim O'Neill", "Laney Baraugh"]
+        },
+        {
+            "name" : "Intermediate Saturday Class 2",
+            "startTime" : "Saturday May 18, 2019 11:00 AM",
+            "endTime" : "Saturday May 18, 2019 11:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The SECOND intermediate class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "intermediate",
+            "track" : "idiom",
+            "instructors" : ["Damon Stone", "Julie Brown"]
+            
+        },
+        {
+            "name" : "Intermediate Saturday Class 3",
+            "startTime" : "Saturday May 18, 2019 12:00 PM",
+            "endTime" : "Saturday May 18, 2019 12:50 PM",
+            "venue" : "venue 1 id",
+            "description" : "The THIRD intermediate class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "intermediate",
+            "track" : "idiom",
+            "instructors" : ["Tim O'Neill ", "Julie Brown"]
+            
+        },
+        {
+            "name" : "Advanced Saturday Class 1",
+            "startTime" : "Saturday May 18, 2019 10:00 AM",
+            "endTime" : "Saturday May 18, 2019 10:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The FIRST advanced class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "advanced",
+            "track" : "idiom",
+            "instructors" : ["Damon Stone", "Julie Brown"]
+        },
+        {
+            "name" : "Advanced Saturday Class 2",
+            "startTime" : "Saturday May 18, 2019 11:00 AM",
+            "endTime" : "Saturday May 18, 2019 11:50 AM",
+            "venue" : "venue 1 id",
+            "description" : "The SECOND advanced class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "advanced",
+            "track" : "idiom",
+            "instructors" : ["Tim O'Neill", "Mike Legenthall"]
+            
+        },
+        {
+            "name" : "Advanced Saturday Class 3",
+            "startTime" : "Saturday May 18, 2019 12:00 PM",
+            "endTime" : "Saturday May 18, 2019 12:50 PM",
+            "venue" : "venue 1 id",
+            "description" : "The THIRD advanced class on Saturday will consist of learning many things including idiom basics, blues dance basics, and blues music basics",
+            "level" : "advanced",
+            "track" : "idiom",
+            "instructors" : ["Damon Stone ", "Mike Legenthall"]
+            
+        }
+    ]
+}
