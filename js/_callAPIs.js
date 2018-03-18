@@ -1,35 +1,28 @@
 "use strict";
 
+// Authentication
 const eventbriteAPIkey = "KD72TKWVWZCHLBA5VKDB";
 const eventbriteAUTHurl = `https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=${eventbriteAPIkey}`;
-
-const eventbriteGETurl = (geturl) => {
-     let newURL = `https://www.eventbriteapi.com/v3/${geturl}?token=${eventbriteAPIkey}`;
-     return newURL;
-};
-
-//Organizer IDs
-const lauraID = "9863217585";
 
 //GET url functions
 let GETorganizer = (id) => {
     let organizerID = id;
-    let getURL = `organizers/${organizerID}/`;
-    return getURL;
+    let organizerURL = `organizers/${organizerID}/`;
+    return organizerURL;
 };
 
 let GETorganizerEvents = (id) => {
     let organizerID = id;
-    let getURL = `organizers/${organizerID}/events/`;
-    return getURL;
+    let organizerEventURL = `organizers/${organizerID}/events/`;
+    return organizerEventURL;
 };
 
-let eventbriteCall = () => {
+let eventbriteCall = (urlPartial) => {
     $.ajax({
-    url: eventbriteGETurl(GETorganizerEvents(lauraID))
+    url: `https://www.eventbriteapi.com/v3/${urlPartial}?token=${eventbriteAPIkey}`
     }).done( function( organizer ) {
         console.log('It worked:', organizer);
     });
 };
 
-module.exports = {eventbriteCall};
+module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents};
