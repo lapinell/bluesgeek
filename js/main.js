@@ -3,6 +3,7 @@
 let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
+let user = require("./_user");
 
 //Organizer IDs
 const pinellID = "9863217585";
