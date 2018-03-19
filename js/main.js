@@ -15,3 +15,12 @@ callAPI.eventbriteCall(orgShipp);
 let pinellEvents = callAPI.GETorganizerEvents(pinellID);
 
 callAPI.eventbriteCall(pinellEvents);
+
+// Menu Button
+$('#btn_menu').click(function() {
+    if( $('nav').attr('hidden') == "hidden" ){ //if navigation is not showing
+        $('nav').removeAttr('hidden');//show navigation
+    } else { 
+        $('nav').attr('hidden', true);//else hide navigation
+    }
+});
