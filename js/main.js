@@ -1,6 +1,7 @@
 "use strict";
 
 let callAPI = require("./_callAPIs");
+let menuFunc = require("./_menu");
 
 //Organizer IDs
 const pinellID = "9863217585";
@@ -17,10 +18,14 @@ let pinellEvents = callAPI.GETorganizerEvents(pinellID);
 callAPI.eventbriteCall(pinellEvents);
 
 // Menu Button
-$('#btn_menu').click(function() {
-    if( $('nav').attr('hidden') == "hidden" ){ //if navigation is not showing
-        $('nav').removeAttr('hidden');//show navigation
-    } else { 
-        $('nav').attr('hidden', true);//else hide navigation
-    }
+$('#btn_menu').click(function () {
+    menuFunc.hideElement('nav');
+});
+
+$('#signIn').click(function () {
+    menuFunc.hideShowMultElement('#signIn', '#signOut');
+});
+
+$('#signOut').click(function () {
+    menuFunc.hideShowMultElement('#signOut', '#signIn');
 });
