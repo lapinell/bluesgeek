@@ -54,3 +54,4 @@ let addUserFB = (uid) => {
     });
 };
 
+module.exports = { addUserFB };
