@@ -44,4 +44,13 @@ let makeNewUser = (uid) => {
         community: null,
         fbid: null
     };
+    return userObj;
 };
+    
+let addUserFB = (uid) => {
+    fbInteraction.addUserFB(makeNewUser(uid))
+    .then((result) => {
+        console.log("user added:", uid, result.uid);
+    });
+};
+
