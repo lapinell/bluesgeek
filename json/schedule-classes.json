@@ -1,4 +1,5 @@
 {
+    "scheduleClasses" : {
     "saturday" : [
         {
             "name" : "Beginner Saturday Class 1",
@@ -197,4 +198,5 @@
             
         }
     ]
+}
 }

@@ -2,6 +2,7 @@
 
 let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
+let fbInteraction = require("./_firebase-interaction");
 
 //Organizer IDs
 const pinellID = "9863217585";
@@ -9,13 +10,13 @@ const shippID = "17088682251";
 
 //API calls
 
-let orgShipp = callAPI.GETorganizer(shippID);
+// let orgShipp = callAPI.GETorganizer(shippID);
 
-callAPI.eventbriteCall(orgShipp);
+// callAPI.eventbriteCall(orgShipp);
 
-let pinellEvents = callAPI.GETorganizerEvents(pinellID);
+// let pinellEvents = callAPI.GETorganizerEvents(pinellID);
 
-callAPI.eventbriteCall(pinellEvents);
+// callAPI.eventbriteCall(pinellEvents);
 
 // Menu Button
 $('#btn_menu').click(function () {
@@ -24,7 +25,11 @@ $('#btn_menu').click(function () {
 
 $('#signIn').click(function () {
     console.log('signIn clicked');
+    fbInteraction.logInGoogle()
+    .then( (result) => {
+    console.log("result from login", result);
     menuFunc.hideShowMultElement('#signIn', '#signOut');
+    });
 });
 
 $('#signOut').click(function () {
