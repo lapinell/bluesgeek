@@ -23,9 +23,11 @@ $('#btn_menu').click(function () {
 });
 
 $('#signIn').click(function () {
+    console.log('signIn clicked');
     menuFunc.hideShowMultElement('#signIn', '#signOut');
 });
 
 $('#signOut').click(function () {
+    console.log('signOut clicked');
     menuFunc.hideShowMultElement('#signOut', '#signIn');
 });
