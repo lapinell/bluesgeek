@@ -10,18 +10,21 @@ nav {
         align-content: stretch;
     }
 
-    a {
-        color: $geekwhite;
-        &:hover {
-            color: $geekwhite;
-            background:$mediumgray;
-        }
+    li {
         &#signIn, &#signOut {
             background: $geekblue;
 
-            &:hover {
+            & a:hover {
                 background: $mediumblue;
             }
         }
     }
-}
+
+    a {
+        color: $geekwhite;
+            &:hover {
+                color: $geekwhite;
+                background:$mediumgray;
+            }
+        }
+    }
