@@ -1,12 +1,12 @@
 .schedule {
-    background: $geekwhite;
+    background: $geekwhite-bg;
     & p, h2 {
         margin-bottom: 0;
     }
 }
 
 .eventItem {
-    border-bottom: 2px solid $lightgray;
+    border-bottom: 2px solid $lightgray-bg;
     .card {
         background: none;
         border: none;
@@ -19,7 +19,7 @@
 }
 
 .dateFilter {
-    background: $geekblue;
+    background: $geekblue-bg;
     color: $geekwhite;
 
     #dates{

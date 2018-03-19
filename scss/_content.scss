@@ -9,11 +9,11 @@ main {
         margin: 1rem 0;
         padding:  1rem 2rem;
         border-radius: .5rem 0 0 .5rem;
-        background: $lightgray;
+        background: $lightgray-bg;
         color: $darkblue;
     
         &.title {
-            background: $geekblue;
+            background: $geekblue-bg;
             color: $geekwhite;  
             border-radius: 0;
         }
@@ -23,9 +23,10 @@ main {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
     body {
-        background: url(../images/cropped-kim-brock.jpg) no-repeat center center fixed;
+
+        background: url(../images/cropped-kim-brock.jpg) no-repeat left center fixed;
         background-size: cover;
-    
+
         > div.container-fluid {
             max-width: 850px;
         }
@@ -48,5 +49,13 @@ main {
                 margin-top: 0;
             }
         }
+    }
+}
+
+@media (max-width: 991.98px) {
+    body {
+    
+        background: url(../images/cropped-kim-brock-tablet.jpg) no-repeat center center fixed;
+        background-size: cover;
     }
 }

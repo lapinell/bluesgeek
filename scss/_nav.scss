@@ -1,7 +1,7 @@
 nav {
     padding-left: 0; 
     padding-right: 0;
-    background: $darkgray;
+    background: $darkgray-bg;
     color: $geekwhite;
     justify-content: stretch;
     align-content: stretch;
@@ -10,18 +10,21 @@ nav {
         align-content: stretch;
     }
 
-    a {
-        color: $geekwhite;
-        &:hover {
-            color: $geekwhite;
-            background:$mediumgray;
-        }
-        &#signIn {
-            background: $geekblue;
+    li {
+        &#signIn, &#signOut {
+            background: $geekblue-bg;
 
-            &:hover {
-                background: $mediumblue;
+            & a:hover {
+                background: $mediumblue-bg;
             }
         }
     }
-}
+
+    a {
+        color: $geekwhite;
+            &:hover {
+                color: $geekwhite;
+                background:$mediumgray-bg;
+            }
+        }
+    }
