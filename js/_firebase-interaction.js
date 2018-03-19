@@ -3,7 +3,7 @@
 //This module only gets and sets data in the firebase database.
 
 let firebase = require('./_firebase-config'),
-    provider = new firebase.auth.GoogleAuthProvide();
+    provider = new firebase.auth.GoogleAuthProvider();  
 
 
 let getFBdetails = (user) => {
