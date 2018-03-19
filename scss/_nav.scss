@@ -1,7 +1,7 @@
 nav {
     padding-left: 0; 
     padding-right: 0;
-    background: $darkgray;
+    background: $darkgray-bg;
     color: $geekwhite;
     justify-content: stretch;
     align-content: stretch;
@@ -12,10 +12,10 @@ nav {
 
     li {
         &#signIn, &#signOut {
-            background: $geekblue;
+            background: $geekblue-bg;
 
             & a:hover {
-                background: $mediumblue;
+                background: $mediumblue-bg;
             }
         }
     }
@@ -24,7 +24,7 @@ nav {
         color: $geekwhite;
             &:hover {
                 color: $geekwhite;
-                background:$mediumgray;
+                background:$mediumgray-bg;
             }
         }
     }

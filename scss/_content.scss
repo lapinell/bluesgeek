@@ -9,11 +9,11 @@ main {
         margin: 1rem 0;
         padding:  1rem 2rem;
         border-radius: .5rem 0 0 .5rem;
-        background: $lightgray;
+        background: $lightgray-bg;
         color: $darkblue;
     
         &.title {
-            background: $geekblue;
+            background: $geekblue-bg;
             color: $geekwhite;  
             border-radius: 0;
         }
