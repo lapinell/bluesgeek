@@ -27,12 +27,15 @@ $('#signIn').click(function () {
     console.log('signIn clicked');
     fbInteraction.logInGoogle()
     .then( (result) => {
-    console.log("result from login", result);
+    console.log("result from login", result.user.uid);
     menuFunc.hideShowMultElement('#signIn', '#signOut');
     });
 });
 
 $('#signOut').click(function () {
     console.log('signOut clicked');
+    fbInteraction.logOut();
     menuFunc.hideShowMultElement('#signOut', '#signIn');
 });
+
+console.log('end main.js');
