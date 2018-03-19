@@ -21,3 +21,11 @@ callAPI.eventbriteCall(pinellEvents);
 $('#btn_menu').click(function () {
     menuFunc.hideElement('nav');
 });
+
+$('#signIn').click(function () {
+    menuFunc.hideShowMultElement('#signIn', '#signOut');
+});
+
+$('#signOut').click(function () {
+    menuFunc.hideShowMultElement('#signOut', '#signIn');
+});
