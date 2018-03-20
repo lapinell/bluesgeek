@@ -4,14 +4,16 @@ const firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
 
+let FBkeys = require('./_firebaseKey');
+
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCUPRfGGlr1N9Wq8rFfnlbxQiGPxwc9d3A",
-    authDomain: "bluesgeek-9f913.firebaseapp.com",
-    databaseURL: "https://bluesgeek-9f913.firebaseio.com",
-    projectId: "bluesgeek-9f913",
-    storageBucket: "bluesgeek-9f913.appspot.com",
-    messagingSenderId: "483861606831"
+    apiKey: FBkeys.getKey().apiKey ,
+    authDomain: FBkeys.getKey().authDomain,
+    databaseURL: FBkeys.getKey().databaseURL,
+    projectId: FBkeys.getKey().projectId,
+    storageBucket: FBkeys.getKey().storageBucket,
+    messagingSenderId: FBkeys.getKey().messagingSenderId
   };
   
   firebase.initializeApp(config);
