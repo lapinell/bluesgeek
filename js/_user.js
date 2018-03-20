@@ -59,7 +59,7 @@ let createUserProfile = (uid) => {
             uid: uid,
             fbid: result.name
         };
-        console.log(tmpUser);
+        console.log("tmpUser:", tmpUser);
         return tmpUser;
     })
     .then((tmpUser) => {
@@ -67,4 +67,12 @@ let createUserProfile = (uid) => {
     });
 };
 
-module.exports = { createUserProfile };
+let checkForUser = (uid) => {
+    fbInteraction.getFBdetails(uid)
+    .then((result) => {
+        let data = Object.value(result);
+        console.log("result data:", data);
+    });
+};
+
+module.exports = { checkForUser };

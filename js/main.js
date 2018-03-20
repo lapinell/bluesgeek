@@ -31,7 +31,7 @@ $('#signIn').click(function () {
     .then( (result) => {
     console.log("result from login", result.user.uid);
     menuFunc.hideShowMultElement('#signIn', '#signOut');
-    user.createUserProfile(result.user.uid);
+    user.checkForUser(result.user.uid);
     });
 });
 
