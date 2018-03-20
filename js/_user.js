@@ -100,4 +100,21 @@ let getUserObj = () => {
     return currentUser;
 };
 
-module.exports = { checkForUser, getUser, getUserObj };
+// Get Values from Form
+
+let buildNewUser = () => {
+    let newUserObj = {
+        firstName : $("#firstName").val(),
+        lastName : $("#lastName").val(),
+        email : $("#email").val(),
+        street : $("#streetAddress").val(),
+        city : $("#city").val(),
+        state : $("#state").val(),
+        zipcode :  $("#zipcode").val(),
+        country :  $("#country").val(),
+        community :  $("#community").val(),
+    };
+    return newUserObj;
+};
+
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser };
