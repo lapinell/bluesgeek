@@ -61,8 +61,8 @@ let setUserVars = (obj) => {
         currentUser.country = obj.country ? obj.country : currentUser.country;
         currentUser.community = obj.community ? obj.community : currentUser.community;
         currentUser.fbid = obj.fbid ? obj.fbid : currentUser.fbid;
+        resolve(currentUser);
     });
-    resolve(currentUser);
 };
 
 
