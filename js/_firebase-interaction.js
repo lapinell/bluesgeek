@@ -5,10 +5,11 @@
 let firebase = require('./_firebase-config'),
     provider = new firebase.auth.GoogleAuthProvider();  
 
+// User Profile Interactions
 
 let getFBdetails = (user) => {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
+        url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
         return resolve;
     }).fail((error) => {
@@ -18,7 +19,7 @@ let getFBdetails = (user) => {
 
 let addUserFB = (userObj) => {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user.json`,
+        url: `${firebase.getFBsettings().databaseURL}/users.json`,
         type:'POST',
         data: JSON.stringify(userObj),
         dataType: 'json'
@@ -29,7 +30,7 @@ let addUserFB = (userObj) => {
 
 let updateUserFB = (userObj) => {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user/${userObj.fbID}.json`,
+        url: `${firebase.getFBsettings().databaseURL}/users/${userObj.fbID}.json`,
         type: 'PUT',
         data: JSON.stringify(userObj),
         dataType: 'json'
@@ -63,6 +64,9 @@ let logInGoogle = () => {
  let logOut = () => {
     return firebase.auth().signOut();
  };
+
+
+// Schedule Interactions
 
  module.exports = {
     getFBdetails,
