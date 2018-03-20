@@ -50,28 +50,39 @@ let makeNewUser = (uid) => {
 let setUserVars = (obj) => {
     console.log('user.setUserVars: obj', obj);
 };
-    
-let createUserProfile = (uid) => {
-    fbInteraction.addUserFB(makeNewUser(uid))
-    .then((result) => {
-        console.log('success:', result);
-        let tmpUser = {
-            uid: uid,
-            fbid: result.name
-        };
-        console.log("tmpUser:", tmpUser);
-        return tmpUser;
-    })
-    .then((tmpUser) => {
-        return setUserVars(tmpUser);
-    });
-};
+
 
 let checkForUser = (uid) => {
     fbInteraction.getFBdetails(uid)
     .then((result) => {
+        console.log('result', result);
         let data = Object.values(result);
-        console.log("result data:", data);
+        console.log("result data:", data.length);
+        if (data.length === 0) {
+            console.log('need to create user');
+            console.log('creating profile for', uid);
+            fbInteraction.addUserFB(makeNewUser(uid))
+            .then((result) => {
+                console.log('success:', result);
+                let tmpUser = {
+                    uid: uid,
+                    fbid: result.name
+                };
+                console.log("tmpUser:", tmpUser);
+                return tmpUser;
+            })
+            .then((tmpUser) => {
+                return setUserVars(tmpUser);
+            });
+        } else {
+            console.log('user exists', data);
+            let key = Object.keys(result);
+            data[0].fbID = key[0];
+            setUserVars(data[0])
+            .then((resolve) => {
+                console.log(resolve);
+            });
+        }
     });
 };
 

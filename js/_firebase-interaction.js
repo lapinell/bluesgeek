@@ -8,7 +8,7 @@ let firebase = require('./_firebase-config'),
 
 let getFBdetails = (user) => {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}".json`
+        url: `${firebase.getFBsettings().databaseURL}/users.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
         return resolve;
     }).fail((error) => {
