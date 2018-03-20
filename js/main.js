@@ -50,7 +50,7 @@ $('.saveProfile').click(function() {
 
 $('#editProfile').click(function() {
     console.log('edit profile button clicked');
-    document.location.replace('form.html');
+    document.location.replace('edit-profile.html');
 });
 
 console.log('end main.js');
