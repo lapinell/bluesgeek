@@ -5,6 +5,7 @@
 let firebase = require('./_firebase-config'),
     provider = new firebase.auth.GoogleAuthProvider();  
 
+// User Profile Interactions
 
 let getFBdetails = (user) => {
     return $.ajax({
@@ -63,6 +64,9 @@ let logInGoogle = () => {
  let logOut = () => {
     return firebase.auth().signOut();
  };
+
+
+// Schedule Interactions
 
  module.exports = {
     getFBdetails,
