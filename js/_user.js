@@ -80,18 +80,6 @@ let checkForUser = (uid) => {
                 console.log('new user added to firebase', result);
                 document.location.replace('edit-profile.html');
             });
-        //     .then((result) => {
-        //         console.log('success:', result); //if successful, create a temperary user with uid and firebase id
-        //         let tmpUser = {
-        //             uid: uid,
-        //             fbid: result.name
-        //         };
-        //         console.log("tmpUser:", tmpUser);
-        //         return tmpUser; //return the temperary user object
-        //     })
-        //     .then((tmpUser) => { // then seet the user object variables
-        //         return setUserVars(tmpUser);
-        //     });
         } else {
             console.log('user exists', data);
             let key = Object.keys(result);
