@@ -43,10 +43,14 @@ $('#signOut').click(function () {
 });
 
 //// Edit, Save, Delete Profile
+$('.saveProfile').click(function() {
+    console.log('saved profile button activated');
+    //update user profile in firebase with values from form
+});
+
 $('#editProfile').click(function() {
     console.log('edit profile button clicked');
     document.location.replace('form.html');
-    console.log('redirect complete');
 });
 
 console.log('end main.js');
