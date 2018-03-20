@@ -1,5 +1,6 @@
 "use strict";
 
+
 // Build Profile Form
 
 let userProfileForm = (userObj) => {
@@ -18,8 +19,8 @@ let userProfileForm = (userObj) => {
         let form =
         `<div class="row">
         <div class="col">
-            <h2 id="form-userName">John Doe</h2>
-            <p id="form-userLocation">Nashville, TN</p>
+            <h2>Your BluesGeek Profile</h2>
+            <p>Please make sure to fill in all the required fields. These are required for registering for any BluesGeek events.</p>
         </div>
         <div class="col-3">
             <button>Save</button>
@@ -67,7 +68,7 @@ let userProfileForm = (userObj) => {
 
 // Build Profile
 
-{/* <section class="row">
+    /* <section class="row">
     <div class="col">
         <h2 id="userName"></h2>
         <p id="userLocation"></p>
@@ -86,6 +87,7 @@ let userProfileForm = (userObj) => {
         <button id="deleteUser">Delete Account</button>
         <button id="resetUserPassword">Change Password</button>
     </div>
-</section> */}
+</section> */
+
 
 module.exports = {userProfileForm};
