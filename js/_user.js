@@ -21,12 +21,12 @@ let currentUser = {
 //listen for changed state
 firebase.auth().onAuthStateChanged((user) => {
     console.log("onAuthStateChanged", user);
-    if (user) {
-        currentUser.uid = user.uid;
-        console.log("current user:", currentUser);
-    } else {
-        console.log("user not logged in", currentUser);
-    }
+        if (user) {
+            currentUser.uid = user.uid;
+            console.log("current user:", currentUser);
+        } else {
+            console.log("user not logged in", currentUser);
+        }
 });
 
 let makeNewUser = (uid) => {
@@ -70,7 +70,7 @@ let createUserProfile = (uid) => {
 let checkForUser = (uid) => {
     fbInteraction.getFBdetails(uid)
     .then((result) => {
-        let data = Object.value(result);
+        let data = Object.values(result);
         console.log("result data:", data);
     });
 };
