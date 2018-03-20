@@ -14,7 +14,7 @@ let FBkeys = require('./_firebaseKey');
     projectId: FBkeys.getKey().projectId,
     storageBucket: FBkeys.getKey().storageBucket,
     messagingSenderId: FBkeys.getKey().messagingSenderId
-  };
+  }; 
   
   firebase.initializeApp(config);
 
