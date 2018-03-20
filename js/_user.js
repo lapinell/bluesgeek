@@ -100,4 +100,12 @@ let checkForUser = (uid) => {
     });
 };
 
-module.exports = { checkForUser };
+let getUser = () => {
+    return currentUser.uid;
+};
+
+let getUserObj = () => {
+    return currentUser;
+};
+
+module.exports = { checkForUser, getUser, getUserObj };
