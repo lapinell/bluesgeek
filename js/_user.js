@@ -49,6 +49,20 @@ let makeNewUser = (uid) => {
 
 let setUserVars = (obj) => {
     console.log('user.setUserVars: obj', obj);
+    return new Promise((resolve, reject) => {
+        currentUser.firstName = obj.firstName ? obj.FirstName : currentUser.firstName;
+        currentUser.lastName = obj.lastName ? obj.lastName : currentUser.lastName;
+        currentUser.email = obj.email ? obj.email : currentUser.email;
+        currentUser.password = obj.password ? obj.password : currentUser.password;
+        currentUser.streetAddress = obj.streetAddress ? obj.streetAddress : currentUser.streetAddress;
+        currentUser.city = obj.city ? obj.city : currentUser.city;
+        currentUser.state = obj.state ? obj.state : currentUser.state;
+        currentUser.zipcode = obj.zipcode ? obj.zipcode : currentUser.zipcode;
+        currentUser.country = obj.country ? obj.country : currentUser.country;
+        currentUser.community = obj.community ? obj.community : currentUser.community;
+        currentUser.fbid = obj.fbid ? obj.fbid : currentUser.fbid;
+    });
+    resolve(currentUser);
 };
 
 
