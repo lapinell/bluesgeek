@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BluesGeek 2019 General Template</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Open+Sans" rel="stylesheet">
+    <link href="css/glyphicons-halflings.css" rel="stylesheet">
+    <link href="css/glyphicons-bootstrap.css" rel="stylesheet"> 
+
+    <!-- Styling -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/lib/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/lib/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="row">
+            <button type="button" class="btn btn-default" aria-label="Right Align">
+                <span class="glyphicon glyphicon-menu-hamburger" alt="Search by keyword" aria-hidden="true"></span>
+            </button>
+            <h1 class="col">General Template</h1>
+            <button type="button" class="btn btn-default" aria-label="Right Align">
+                <span class="glyphicon glyphicon-search" alt="Search by keyword" aria-hidden="true"></span>
+            </button>
+        </header>
+        <div class="row form pageContent">
+            <nav hidden="true" class="col nopadding">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Talent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Policies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="signIn" class="nav-link" href="#">Sign In</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="col">
+                <div class="row">
+                    <div class="col">
+                        <h2 id="form-userName">John Doe</h2>
+                        <p id="form-userLocation">Nashville, TN</p>
+                    </div>
+                    <div class="col-3">
+                        <button>Save</button>
+                    </div> 
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">First Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="streetAddress">Street Address</label>
+                        <input type="text" class="form-control" id="streetAddress" placeholder="Street Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label for="zipcode">Zip Code</label>
+                        <input type="number" class="form-control" id="zipcode" placeholder="00501">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <label for="community">Community</label>
+                        <input type="text" class="form-control" id="community" placeholder="Community">
+                    </div>
+                </form>    
+            </main>
+        </div>
+        <footer class="row">
+            <div>
+                <p>All photographs, media and content appearing on this site are the property of Kenneth Shipp DBA BluesGeek. They are protected by U.S. Copyright Laws, and are not to be downloaded or reproduced in any way without the written permission of Kenneth Shipp. Copyright 2018 BluesGeek/Kenneth Shipp All Rights Reserved.</p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is currently (March 2018) licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+            </div>
+        </footer>
+    </div>
+    <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="lib/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/main.js"></script>
+</body>
+</html>
