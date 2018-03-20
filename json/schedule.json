@@ -217,7 +217,7 @@
                 "startTime" : "Friday May 18, 2018 7:00 PM CDT",
                 "endTime" : "Friday May 18, 2018 11:30 PM CDT",
                 "venue" : "The Studio",
-                "description" : "This will kick off our weekend with a local blues band.",
+                "description" : "This will kick off our weekend with a local blues band."
             },
             {
                 "name" : "Friday Late Night Dance",
@@ -225,7 +225,7 @@
                 "startTime" : "Saturday May 18, 2018 12:00 AM CDT",
                 "endTime" :"Saturday May 18, 2018 4:00 AM CDT" ,
                 "venue" : "Global Education Center",
-                "description" : "For you late night crazies, we've got some regional DJs lined up for you.",
+                "description" : "For you late night crazies, we've got some regional DJs lined up for you."
             },
             {
                 "name" : "Saturday Workshop" ,
@@ -233,7 +233,7 @@
                 "startTime" :"Saturday May 18, 2018 11:00 AM CDT" ,
                 "endTime" : "Saturday May 18, 2018 4:00 PM CDT",
                 "venue" : "Downtown YMCA",
-                "description" : "The learning begins",
+                "description" : "The learning begins"
             },
             {
                 "name" : "Pro-Am Prelims" ,
@@ -241,7 +241,7 @@
                 "startTime" : "Saturday May 18, 2018 4:30 PM CDT",
                 "endTime" : "Saturday May 18, 2018 5:30 PM CDT",
                 "venue" : "Downtown YMCA",
-                "description" : "Pro-Am competition preliminaries will widdle the group down to finalists.",
+                "description" : "Pro-Am competition preliminaries will widdle the group down to finalists."
             },
             {
                 "name" : "Saturday Night Dance" ,
@@ -249,7 +249,7 @@
                 "startTime" : "Saturday May 18, 2018 7:00 PM CDT",
                 "endTime" : "Saturday May 18, 2018 11:30 PM CDT",
                 "venue" : "The Studio",
-                "description" : "This will be the highligh of our weekend with a well-known blues band.",
+                "description" : "This will be the highligh of our weekend with a well-known blues band."
             },
             {
                 "name" : "Solo Prelims" ,
@@ -257,7 +257,7 @@
                 "startTime" : "Saturday May 18, 2018 9:30 PM CDT",
                 "endTime" : "Saturday May 18, 2018 10:00 PM CDT",
                 "venue" : "The Studio",
-                "description" : "Solo competition preliminaries will widdle the group down to finalists.",
+                "description" : "Solo competition preliminaries will widdle the group down to finalists."
             },
             {
                 "name" : "Saturday Late Night Dance",
@@ -265,15 +265,15 @@
                 "startTime" : "Sunday May 18, 2018 12:00 AM CDT",
                 "endTime" :"Sunday May 18, 2018 4:00 AM CDT" ,
                 "venue" : "Global Education Center",
-                "description" : "For you late night crazies, we've got some national DJs lined up for you.",
+                "description" : "For you late night crazies, we've got some national DJs lined up for you."
             },
             {
-            "name" : "Pro-Am Finals" ,
-            "day" : "saturday",
-            "startTime" : "Sunday May 18, 2018 1:00 AM CDT",
-            "endTime" : "Sunday May 18, 2018 1:30 AM CDT",
-            "venue" : "Global Education Center",
-            "description" : "Solo competition finals will widdle the group down to a winner.",
+                "name" : "Pro-Am Finals" ,
+                "day" : "saturday",
+                "startTime" : "Sunday May 18, 2018 1:00 AM CDT",
+                "endTime" : "Sunday May 18, 2018 1:30 AM CDT",
+                "venue" : "Global Education Center",
+                "description" : "Solo competition finals will widdle the group down to a winner."
             },
             {
                 "name" : "Sunday Workshop" ,
@@ -281,7 +281,7 @@
                 "startTime" :"Sunday May 18, 2018 11:00 AM CDT" ,
                 "endTime" : "Sunday May 18, 2018 4:00 PM CDT",
                 "venue" : "Downtown YMCA",
-                "description" : "The learning begins",
+                "description" : "The learning begins"
             },
             {
                 "name" : "Beginner Idiom Prelims" ,
@@ -289,7 +289,7 @@
                 "startTime" : "Sunday May 18, 2018 4:30 PM CDT",
                 "endTime" : "Sunday May 18, 2018 5:30 PM CDT",
                 "venue" : "Downtown YMCA",
-                "description" : "Beginner idiom competition preliminaries will widdle the group down to finalists.",
+                "description" : "Beginner idiom competition preliminaries will widdle the group down to finalists."
             },
             {
                 "name" : "Sunday Night Dance" ,
@@ -297,7 +297,7 @@
                 "startTime" : "Sunday May 18, 2018 7:00 PM CDT",
                 "endTime" : "Sunday May 18, 2018 11:30 PM CDT",
                 "venue" : "The Studio",
-                "description" : "This will be the highligh of our weekend with a well-known blues band.",
+                "description" : "This will be the highligh of our weekend with a well-known blues band."
             },
             {
                 "name" : "Beginner Idiom Finals" ,
@@ -305,7 +305,7 @@
                 "startTime" : "Sunday May 18, 2018 9:30 PM CDT",
                 "endTime" : "Sunday May 18, 2018 10:00 PM CDT",
                 "venue" : "The Studio",
-                "description" : "Solo competition preliminaries will widdle the group down to finalists.",
+                "description" : "Solo competition preliminaries will widdle the group down to finalists."
             },
             {
                 "name" : "Sunday Late Night Dance",
@@ -313,7 +313,7 @@
                 "startTime" : "Monday May 18, 2018 12:00 AM CDT",
                 "endTime" :"Monday May 18, 2018 4:00 AM CDT" ,
                 "venue" : "Global Education Center",
-                "description" : "For you late night crazies, we've got some national DJs lined up for you.",
+                "description" : "For you late night crazies, we've got some national DJs lined up for you."
             },
             {
             "name" : "Solo Finals" ,
@@ -321,7 +321,7 @@
             "startTime" : "Monday May 18, 2018 1:00 AM CDT",
             "endTime" : "Monday May 18, 2018 1:30 AM CDT",
             "venue" : "Global Education Center",
-            "description" : "Solo competition preliminaries will widdle the group down to finalists.",
+            "description" : "Solo competition preliminaries will widdle the group down to finalists."
             }
         ]
-    }
+}

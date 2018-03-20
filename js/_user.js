@@ -46,12 +46,25 @@ let makeNewUser = (uid) => {
     };
     return userObj;
 };
+
+let setUserVars = (obj) => {
+    console.log('user.setUserVars: obj', obj);
+};
     
-let addUserFB = (uid) => {
+let createUserProfile = (uid) => {
     fbInteraction.addUserFB(makeNewUser(uid))
     .then((result) => {
-        console.log("user added:", uid, result.uid);
+        console.log('success:', result);
+        let tmpUser = {
+            uid: uid,
+            fbid: result.name
+        };
+        console.log(tmpUser);
+        return tmpUser;
+    })
+    .then((tmpUser) => {
+        return setUserVars(tmpUser);
     });
 };
 
-module.exports = { addUserFB };
+module.exports = { createUserProfile };
