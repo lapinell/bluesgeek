@@ -4,6 +4,7 @@ let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");
+let userProfile = require("./_buildProfile"); 
 
 //// Organizer IDs
 const pinellID = "9863217585";
@@ -39,6 +40,13 @@ $('#signOut').click(function () {
     console.log('signOut clicked');
     fbInteraction.logOut();
     menuFunc.hideShowMultElement('#signOut', '#signIn');
+});
+
+//// Edit, Save, Delete Profile
+$('#editProfile').click(function() {
+    console.log('edit profile button clicked');
+    document.location.replace('form.html');
+    console.log('redirect complete');
 });
 
 console.log('end main.js');
