@@ -48,6 +48,15 @@ let createUser = (userObj) => {
       });
 };
 
+let deleteUser = (uid) => {
+    return $.ajax({
+        url: `${firebase.getFBdetails().databaseURL}/users/${uid}`,
+        method: "DELETE"
+    }).done((data) => {
+        return data;
+    })
+};
+
 let loginUser = (userObj) => {
    return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
       .catch(function (error) {
