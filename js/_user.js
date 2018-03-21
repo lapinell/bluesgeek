@@ -1,7 +1,8 @@
 "use strict";
 
 let firebase = require("./_firebase-config"),
-    fbInteraction = require("./_firebase-interaction");
+    fbInteraction = require("./_firebase-interaction"),
+    menuFunc = require("./_menu");
 
 let currentUser = {
     uid: null,
@@ -23,9 +24,11 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log("onAuthStateChanged", user);
         if (user) {
             currentUser.uid = user.uid;
-            console.log("current user:", currentUser);
+            console.log("current user logged in:", currentUser);
+            menuFunc.hideShowMultElement('#signIn', '#signOut');
         } else {
             console.log("user not logged in", currentUser);
+            menuFunc.hideShowMultElement('#signOut', '#signIn');
         }
 });
 
