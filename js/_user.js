@@ -29,9 +29,10 @@ firebase.auth().onAuthStateChanged((user) => {
         }
 });
 
-let makeNewUser = (uid) => {
+let makeNewUser = (uid, fbID) => {
     let userObj = {
         uid: uid,
+        fbid: fbID,
         firstName: null,
         lastName: null,
         email: null,
@@ -42,7 +43,6 @@ let makeNewUser = (uid) => {
         zipcode: null,
         country: null,
         community: null,
-        fbid: null
     };
     return userObj;
 };
@@ -75,18 +75,10 @@ let checkForUser = (uid) => {
         if (data.length === 0) {
             console.log('need to create user');
             console.log('creating profile for', uid);
-            fbInteraction.addUserFB(makeNewUser(uid))
+            fbInteraction.addUserFB(makeNewUser(uid)) //making new user in firebase
             .then((result) => {
-                console.log('success:', result);
-                let tmpUser = {
-                    uid: uid,
-                    fbid: result.name
-                };
-                console.log("tmpUser:", tmpUser);
-                return tmpUser;
-            })
-            .then((tmpUser) => {
-                return setUserVars(tmpUser);
+                console.log('new user added to firebase', result);
+                document.location.replace('edit-profile.html');
             });
         } else {
             console.log('user exists', data);
@@ -100,4 +92,39 @@ let checkForUser = (uid) => {
     });
 };
 
-module.exports = { checkForUser };
+let setUser = (val) => {
+    currentUser.uid = val;
+};
+
+let getUser = () => {
+    return currentUser.uid;
+};
+
+let getUserObj = () => {
+    return currentUser;
+};
+
+// Get Values from Form
+
+let buildNewUser = (userObj) => {
+    console.log("build new user intialized");
+    return new Promise((resolve, reject) => {
+        let newUserObj = {
+            uid: userObj.uid,
+            fbID: userObj.fbid,
+            firstName : $("#firstName").val(),
+            lastName : $("#lastName").val(),
+            email : $("#email").val(),
+            street : $("#streetAddress").val(),
+            city : $("#city").val(),
+            state : $("#state").val(),
+            zipcode :  $("#zipcode").val(),
+            country :  $("#country").val(),
+            community :  $("#community").val(),
+        };
+        console.log('newUserObj =', newUserObj);
+        resolve(newUserObj);
+    });
+};
+
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser };
