@@ -22,6 +22,7 @@ const shippID = "17088682251";
 
 //// Menu Button
 $('#btn_menu').click(function () {
+    console.log('menu button activated');
     menuFunc.hideElement('nav');
 });
 
@@ -41,6 +42,7 @@ $('#signOut').click(function () {
     console.log('signOut clicked');
     fbInteraction.logOut();
     menuFunc.hideShowMultElement('#signOut', '#signIn');
+    // menuFunc.hideShowMultElement('#signOut', '#signIn');
 });
 
 //// Edit, Save, Delete Profile
@@ -68,5 +70,7 @@ $('#editProfile').click(function() {
     console.log('edit profile button clicked');
     document.location.replace('edit-profile.html');
 });
+
+////Build profile page with currentUser
 
 console.log('end main.js');
