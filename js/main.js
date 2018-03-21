@@ -22,6 +22,7 @@ const shippID = "17088682251";
 
 //// Menu Button
 $('#btn_menu').click(function () {
+    console.log('menu button activated');
     menuFunc.hideElement('nav');
 });
 
@@ -68,5 +69,11 @@ $('#editProfile').click(function() {
     console.log('edit profile button clicked');
     document.location.replace('edit-profile.html');
 });
+
+////Build profile page with currentUser
+
+if( $('body').is('.profilePage')) {
+    console.log('currentUser uid:', user.getUser());
+}
 
 console.log('end main.js');
