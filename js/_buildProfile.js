@@ -24,4 +24,4 @@
 </section> */
 
 
-module.exports = {userProfileForm};
+module.exports = {};
