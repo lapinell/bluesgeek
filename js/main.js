@@ -1,6 +1,6 @@
 "use strict";
 
-let callAPI = require("./_callAPIs");
+let gcallAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");
@@ -53,22 +53,37 @@ $('.saveProfile').click(function() {
     .then((result) => {
         userToSave.fbid = Object.keys(result)[0]; //save firebase id to current user
         console.log("current user is updated?", userToSave);
-        user.buildNewUser(userToSave)
-        .then((userObj) => {
-            console.log('whole new User object', userObj);
-            fbInteraction.updateUserFB(userObj)
-            .then( (result) => { 
-                console.log('user updated?', result);
-                document.location.replace('profile.html');
-            });
-        }); //get values from form and store in current user//update user in firebase
+        return user.buildNewUser(userToSave);
+    })
+    .then((userObj) => {
+        console.log('whole new User object', userObj);
+        return fbInteraction.updateUserFB(userObj);
+    })
+    .then( (result) => { 
+        console.log('user updated?', result);
+        document.location.replace('profile.html');
     });
-    // redirect to profile page with newly added values
+    //get values from form and store in current user//update user in firebase
 });
+    // redirect to profile page with newly added values});
 
 $('#editProfile').click(function() {
     console.log('edit profile button clicked');
     document.location.replace('edit-profile.html');
+});
+
+$('#deleteProfile').click(function() {
+    console.log('delete profile button clicked');
+    let userToDelete = user.getUserObj();
+    fbInteraction.getFBdetails(userToDelete.uid)
+    .then((result) => {
+        userToDelete.fbid = Object.keys(result)[0];
+        console.log(userToDelete.fbid);
+        return fbInteraction.deleteUser(userToDelete.fbid);
+    })
+    .then((data) => {
+        console.log('user has been deleted?');
+    });
 });
 
 ////Build profile page with currentUser

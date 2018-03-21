@@ -48,9 +48,9 @@ let createUser = (userObj) => {
       });
 };
 
-let deleteUser = (uid) => {
+let deleteUser = (fbid) => {
     return $.ajax({
-        url: `${firebase.getFBdetails().databaseURL}/users/${uid}`,
+        url: `${firebase.getFBsettings().databaseURL}/users/${fbid}.json`,
         method: "DELETE"
     }).done((data) => {
         return data;
@@ -84,5 +84,6 @@ let logInGoogle = () => {
     createUser,
     loginUser,
     logInGoogle,
-    logOut
+    logOut,
+    deleteUser
 };
