@@ -1,6 +1,6 @@
 "use strict";
 
-// Build Profile
+// A module for building the profile page
 
 let buildProfile = (userObj) => {
     let profileHTML =
@@ -28,4 +28,4 @@ let buildProfile = (userObj) => {
 };
 
 
-module.exports = {};
+module.exports = { buildProfile };
