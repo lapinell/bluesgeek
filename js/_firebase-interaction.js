@@ -48,6 +48,15 @@ let createUser = (userObj) => {
       });
 };
 
+let deleteUser = (fbid) => {
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/users/${fbid}.json`,
+        method: "DELETE"
+    }).done((data) => {
+        return data;
+    });
+};
+
 let loginUser = (userObj) => {
    return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
       .catch(function (error) {
@@ -75,5 +84,6 @@ let logInGoogle = () => {
     createUser,
     loginUser,
     logInGoogle,
-    logOut
+    logOut,
+    deleteUser
 };
