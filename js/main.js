@@ -33,7 +33,7 @@ $('#signIn').click(function () {
     .then( (result) => {
         console.log("result from login", result.user.uid);
         user.setUser(result.user.uid);
-        menuFunc.hideShowMultElement('#signIn', '#signOut');
+        // menuFunc.hideShowMultElement('#signIn', '#signOut');
         user.checkForUser(result.user.uid);
     });
 });
@@ -42,6 +42,7 @@ $('#signOut').click(function () {
     console.log('signOut clicked');
     fbInteraction.logOut();
     menuFunc.hideShowMultElement('#signOut', '#signIn');
+    // menuFunc.hideShowMultElement('#signOut', '#signIn');
 });
 
 //// Edit, Save, Delete Profile
@@ -71,9 +72,5 @@ $('#editProfile').click(function() {
 });
 
 ////Build profile page with currentUser
-
-if( $('body').is('.profilePage')) {
-    console.log('currentUser uid:', user.getUser());
-}
 
 console.log('end main.js');

@@ -26,9 +26,10 @@ firebase.auth().onAuthStateChanged((user) => {
             currentUser.uid = user.uid;
             console.log("current user logged in:", currentUser);
             menuFunc.hideShowMultElement('#signIn', '#signOut');
-        } else {
-            console.log("user not logged in", currentUser);
+        } else if (null) {
+            currentUser.uid = null;
             menuFunc.hideShowMultElement('#signOut', '#signIn');
+            console.log("user not logged in", currentUser);
         }
 });
 
