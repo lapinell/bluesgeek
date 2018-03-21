@@ -83,6 +83,9 @@ $('#deleteProfile').click(function() {
     })
     .then((data) => {
         console.log('user has been deleted?');
+        fbInteraction.logOut();
+        menuFunc.hideShowMultElement('#signOut', '#signIn');
+        document.location.replace('index.html');
     });
 });
 
