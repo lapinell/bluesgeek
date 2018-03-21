@@ -54,7 +54,7 @@ let deleteUser = (uid) => {
         method: "DELETE"
     }).done((data) => {
         return data;
-    })
+    });
 };
 
 let loginUser = (userObj) => {
