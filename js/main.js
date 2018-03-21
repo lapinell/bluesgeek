@@ -30,9 +30,10 @@ $('#signIn').click(function () {
     console.log('signIn clicked');
     fbInteraction.logInGoogle()
     .then( (result) => {
-    console.log("result from login", result.user.uid);
-    menuFunc.hideShowMultElement('#signIn', '#signOut');
-    user.checkForUser(result.user.uid);
+        console.log("result from login", result.user.uid);
+        user.setUser(result.user.uid);
+        menuFunc.hideShowMultElement('#signIn', '#signOut');
+        user.checkForUser(result.user.uid);
     });
 });
 
@@ -45,12 +46,22 @@ $('#signOut').click(function () {
 //// Edit, Save, Delete Profile
 $('.saveProfile').click(function() {
     console.log('saved profile button activated');
-    user.buildNewUser()//get values from form and store in object
-    .then((userObj) => {
-        console.log('new user built', userObj);
-        fbInteraction.updateUserFB(userObj);     //update firebase user with new values
+    let userToSave = user.getUserObj();
+    fbInteraction.getFBdetails(userToSave.uid)
+    .then((result) => {
+        userToSave.fbid = Object.keys(result)[0]; //save firebase id to current user
+        console.log("current user is updated?", userToSave);
+        user.buildNewUser(userToSave)
+        .then((userObj) => {
+            console.log('whole new User object', userObj);
+            fbInteraction.updateUserFB(userObj)
+            .then( (result) => { 
+                console.log('user updated?', result);
+                document.location.replace('profile.html');
+            });
+        }); //get values from form and store in current user//update user in firebase
     });
-    //redirect to profile page with newly added values
+    // redirect to profile page with newly added values
 });
 
 $('#editProfile').click(function() {

@@ -92,6 +92,10 @@ let checkForUser = (uid) => {
     });
 };
 
+let setUser = (val) => {
+    currentUser.uid = val;
+};
+
 let getUser = () => {
     return currentUser.uid;
 };
@@ -102,12 +106,12 @@ let getUserObj = () => {
 
 // Get Values from Form
 
-let buildNewUser = () => {
+let buildNewUser = (userObj) => {
     console.log("build new user intialized");
     return new Promise((resolve, reject) => {
         let newUserObj = {
-            uid: currentUser.uid,
-            fbID: currentUser.fbid,
+            uid: userObj.uid,
+            fbID: userObj.fbid,
             firstName : $("#firstName").val(),
             lastName : $("#lastName").val(),
             email : $("#email").val(),
@@ -123,4 +127,4 @@ let buildNewUser = () => {
     });
 };
 
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser };
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser };
