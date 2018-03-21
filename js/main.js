@@ -45,7 +45,12 @@ $('#signOut').click(function () {
 //// Edit, Save, Delete Profile
 $('.saveProfile').click(function() {
     console.log('saved profile button activated');
-    //update user profile in firebase with values from form
+    user.buildNewUser()//get values from form and store in object
+    .then((userObj) => {
+        console.log('new user built', userObj);
+        fbInteraction.updateUserFB(userObj);     //update firebase user with new values
+    });
+    //redirect to profile page with newly added values
 });
 
 $('#editProfile').click(function() {

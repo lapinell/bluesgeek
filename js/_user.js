@@ -29,9 +29,10 @@ firebase.auth().onAuthStateChanged((user) => {
         }
 });
 
-let makeNewUser = (uid) => {
+let makeNewUser = (uid, fbID) => {
     let userObj = {
         uid: uid,
+        fbid: fbID,
         firstName: null,
         lastName: null,
         email: null,
@@ -42,7 +43,6 @@ let makeNewUser = (uid) => {
         zipcode: null,
         country: null,
         community: null,
-        fbid: null
     };
     return userObj;
 };
@@ -103,18 +103,24 @@ let getUserObj = () => {
 // Get Values from Form
 
 let buildNewUser = () => {
-    let newUserObj = {
-        firstName : $("#firstName").val(),
-        lastName : $("#lastName").val(),
-        email : $("#email").val(),
-        street : $("#streetAddress").val(),
-        city : $("#city").val(),
-        state : $("#state").val(),
-        zipcode :  $("#zipcode").val(),
-        country :  $("#country").val(),
-        community :  $("#community").val(),
-    };
-    return newUserObj;
+    console.log("build new user intialized");
+    return new Promise((resolve, reject) => {
+        let newUserObj = {
+            uid: currentUser.uid,
+            fbID: currentUser.fbid,
+            firstName : $("#firstName").val(),
+            lastName : $("#lastName").val(),
+            email : $("#email").val(),
+            street : $("#streetAddress").val(),
+            city : $("#city").val(),
+            state : $("#state").val(),
+            zipcode :  $("#zipcode").val(),
+            country :  $("#country").val(),
+            community :  $("#community").val(),
+        };
+        console.log('newUserObj =', newUserObj);
+        resolve(newUserObj);
+    });
 };
 
 module.exports = { checkForUser, getUser, getUserObj, buildNewUser };
