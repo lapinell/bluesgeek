@@ -33,7 +33,7 @@ $('#signIn').click(function () {
     .then( (result) => {
         console.log("result from login", result.user.uid);
         user.setUser(result.user.uid);
-        // menuFunc.hideShowMultElement('#signIn', '#signOut');
+        menuFunc.hideShowMultElement('#signIn', '#signOut');
         user.checkForUser(result.user.uid);
     });
 });
