@@ -16,9 +16,9 @@ let GETorganizerEvents = (organizerID) => {
 };
 
 let GETeventInfo = (eventID) => {
-    let BGticketClassURL = `/events/${eventID}/ticket_classes/`
-    return organizerEventURL;
-}
+    let ticketClassURL = `/events/${eventID}/ticket_classes/`;
+    return ticketClassURL;
+};
 
 let eventbriteCall = (urlPartial) => {
     $.ajax({

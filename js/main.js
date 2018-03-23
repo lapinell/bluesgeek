@@ -1,6 +1,6 @@
 "use strict";
 
-let gcallAPI = require("./_callAPIs");
+let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");
@@ -13,7 +13,7 @@ const bluesGeekID = "44304931242";
 
 //// API calls
 
-
+console.log(callAPI.eventbriteCall(callAPI.GETeventInfo(bluesGeekID)));
 
 // let orgShipp = callAPI.GETorganizer(shippID);
 
