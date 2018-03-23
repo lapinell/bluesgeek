@@ -1,27 +1,13 @@
 "use strict";
 
+//// Module calls
 let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");
 let userProfile = require("./_buildProfile"); 
+let registration = require("./_registration");
 
-//// Organizer IDs
-const pinellID = "9863217585";
-const shippID = "17088682251";
-const bluesGeekID = "44304931242";
-
-//// API calls
-
-console.log(callAPI.eventbriteCall(callAPI.GETeventInfo(bluesGeekID)));
-
-// let orgShipp = callAPI.GETorganizer(shippID);
-
-// callAPI.eventbriteCall(orgShipp);
-
-// let pinellEvents = callAPI.GETorganizerEvents(pinellID);
-
-// callAPI.eventbriteCall(pinellEvents);
 
 //// Menu Button
 $('#btn_menu').click(function () {

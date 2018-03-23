@@ -16,19 +16,19 @@ let eventbriteCall = (urlPartial) => {
 };
 
 let GETorganizer = (organizerID) => {
-    let organizerURL = eventbrite.eventbriteCall(`organizers/${organizerID}/`);
+    let organizerURL = eventbriteCall(`organizers/${organizerID}/`);
     return organizerURL;
 };
 
 let GETorganizerEvents = (organizerID) => {
-    let organizerEventURL = eventbrite.eventbriteCall(`organizers/${organizerID}/events/`);
+    let organizerEventURL = eventbriteCall(`organizers/${organizerID}/events/`);
     return organizerEventURL;
 };
 
 let GETeventDetails = (eventID) => {
-    let eventDetailObject = eventbrite.eventbriteCall(`/events/${eventID}/ticket_classes/`);
+    let eventDetailObject = eventbriteCall(`/events/${eventID}/ticket_classes/`);
     return eventDetailObject;
 };
 
 
-module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents, GETeventInfo};
+module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents, GETeventDetails};
