@@ -5,17 +5,20 @@ const eventbriteAPIkey = "KD72TKWVWZCHLBA5VKDB";
 const eventbriteAUTHurl = `https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=${eventbriteAPIkey}`;
 
 //GET url functions
-let GETorganizer = (id) => {
-    let organizerID = id;
+let GETorganizer = (organizerID) => {
     let organizerURL = `organizers/${organizerID}/`;
     return organizerURL;
 };
 
-let GETorganizerEvents = (id) => {
-    let organizerID = id;
+let GETorganizerEvents = (organizerID) => {
     let organizerEventURL = `organizers/${organizerID}/events/`;
     return organizerEventURL;
 };
+
+let GETeventInfo = () => {
+    let BGticketClassURL = `/events/44304931242/ticket_classes/`
+    return organizerEventURL;
+}
 
 let eventbriteCall = (urlPartial) => {
     $.ajax({
