@@ -5,20 +5,7 @@ const eventbriteAPIkey = "KD72TKWVWZCHLBA5VKDB";
 const eventbriteAUTHurl = `https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=${eventbriteAPIkey}`;
 
 //GET url functions
-let GETorganizer = (organizerID) => {
-    let organizerURL = `organizers/${organizerID}/`;
-    return organizerURL;
-};
 
-let GETorganizerEvents = (organizerID) => {
-    let organizerEventURL = `organizers/${organizerID}/events/`;
-    return organizerEventURL;
-};
-
-let GETeventInfo = (eventID) => {
-    let ticketClassURL = `/events/${eventID}/ticket_classes/`;
-    return ticketClassURL;
-};
 
 let eventbriteCall = (urlPartial) => {
     $.ajax({
@@ -27,5 +14,21 @@ let eventbriteCall = (urlPartial) => {
         console.log('It worked:', data);
     });
 };
+
+let GETorganizer = (organizerID) => {
+    let organizerURL = eventbrite.eventbriteCall(`organizers/${organizerID}/`);
+    return organizerURL;
+};
+
+let GETorganizerEvents = (organizerID) => {
+    let organizerEventURL = eventbrite.eventbriteCall(`organizers/${organizerID}/events/`);
+    return organizerEventURL;
+};
+
+let GETeventDetails = (eventID) => {
+    let eventDetailObject = eventbrite.eventbriteCall(`/events/${eventID}/ticket_classes/`);
+    return eventDetailObject;
+};
+
 
 module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents, GETeventInfo};
