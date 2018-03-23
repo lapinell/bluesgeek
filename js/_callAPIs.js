@@ -15,8 +15,8 @@ let GETorganizerEvents = (organizerID) => {
     return organizerEventURL;
 };
 
-let GETeventInfo = () => {
-    let BGticketClassURL = `/events/44304931242/ticket_classes/`
+let GETeventInfo = (eventID) => {
+    let BGticketClassURL = `/events/${eventID}/ticket_classes/`
     return organizerEventURL;
 }
 
@@ -28,4 +28,4 @@ let eventbriteCall = (urlPartial) => {
     });
 };
 
-module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents};
+module.exports = {eventbriteCall, GETorganizer, GETorganizerEvents, GETeventInfo};
