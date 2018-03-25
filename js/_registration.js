@@ -19,29 +19,40 @@ let grabDetails = (object) => {
     console.log("object is", object);
     // let newTicketObj = {};
     for (let prop in object) { //for each property in the object
-        // console.log('inside for in loop', object);
-        // console.log('prop inside for in loop', object[prop]);
         if (object[prop] == null || object[prop] == undefined) { // if the property is null or undefined
             console.log("obj inside if statement", object);
             console.log("prop inside if statement", object[prop]);
-            delete object[prop]; // delete the property and its value to the newTicketObj
-        //     console.log ("object is now", object); //return the newTicketObj
-        //     let newObj = object;
-        //     console.log(newObj);
+            delete object[prop]; // delete the property and its null/undefined value
         }
-        console.log("object after:", object);
     }
-    // return newTicketObj;
+    console.log("object after:", object);
+    return object;
 };
 
-let fakeObj = {
-    "red" : null,
-    "blue" : "#0000ff",
-    "green" : undefined,
-    "yellow" : "ochre",
-    "white" : "#fff",
-    "purple" : null
-};
+let fakeObjArray = [
+    {
+        "red" : null,
+        "blue" : "#0000ff",
+        "green" : undefined,
+        "yellow" : "ochre",
+        "white" : "#fff",
+        "purple" : null
+    },
+    {
+        "cat" : true,
+        "dog" : 2,
+        "horse" : "one",
+        "snake" : null,
+        "hielo" : undefined,
+        "parrot" : "none",
+    },
+    {
+        "agriculture" : "BS",
+        "math" : null,
+        "html" : true,
+        "javascript" : "in progress"
+    }
+];
 
 grabDetails(fakeObj);
 
