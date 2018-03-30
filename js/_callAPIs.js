@@ -14,7 +14,7 @@ let eventbriteCall = (urlPartial) => {
 };
 
 let GETorganizer = (organizerID) => {
-    eventbriteCall(`organizers/${organizerID}/`)
+    return eventbriteCall(`organizers/${organizerID}/`)
     .then((organizer) => {
         console.log('GETorganizer', organizer);
         return organizer;
@@ -23,7 +23,7 @@ let GETorganizer = (organizerID) => {
 
 let GETorganizerEvents = (organizerID) => {
     
-    eventbriteCall(`organizers/${organizerID}/events/`)
+    return eventbriteCall(`organizers/${organizerID}/events/`)
     .then((organizerEvents) => {
         console.log('GETorganizerEvents: ', organizerEvents);
         return organizerEvents;
@@ -31,7 +31,7 @@ let GETorganizerEvents = (organizerID) => {
 };
 
 let GETeventDetails = (eventID) => {
-    eventbriteCall(`/events/${eventID}/ticket_classes/`)
+    return eventbriteCall(`/events/${eventID}/ticket_classes/`)
     .then((eventDetailObject) => {
         console.log('GETeventDetails', eventDetailObject);
         return eventDetailObject;
