@@ -8,26 +8,34 @@ const eventbriteAUTHurl = `https://www.eventbrite.com/oauth/authorize?response_t
 
 
 let eventbriteCall = (urlPartial) => {
-    $.ajax({
-    url: `https://www.eventbriteapi.com/v3/${urlPartial}?token=${eventbriteAPIkey}`
-    }).done( function( data ) {
-        console.log('It worked:', data);
-    });
+    return $.ajax({
+        url: `https://www.eventbriteapi.com/v3/${urlPartial}?token=${eventbriteAPIkey}`
+        });
 };
 
 let GETorganizer = (organizerID) => {
-    let organizerURL = eventbriteCall(`organizers/${organizerID}/`);
-    return organizerURL;
+    eventbriteCall(`organizers/${organizerID}/`)
+    .then((organizer) => {
+        console.log('GETorganizer', organizer);
+        return organizer;
+    });
 };
 
 let GETorganizerEvents = (organizerID) => {
-    let organizerEventURL = eventbriteCall(`organizers/${organizerID}/events/`);
-    return organizerEventURL;
+    
+    eventbriteCall(`organizers/${organizerID}/events/`)
+    .then((organizerEvents) => {
+        console.log('GETorganizerEvents: ', organizerEvents);
+        return organizerEvents;
+    });
 };
 
 let GETeventDetails = (eventID) => {
-    let eventDetailObject = eventbriteCall(`/events/${eventID}/ticket_classes/`);
-    return eventDetailObject;
+    eventbriteCall(`/events/${eventID}/ticket_classes/`)
+    .then((eventDetailObject) => {
+        console.log('GETeventDetails', eventDetailObject);
+        return eventDetailObject;
+    });
 };
 
 
