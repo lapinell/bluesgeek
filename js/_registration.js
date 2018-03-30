@@ -8,12 +8,16 @@ const shippID = "17088682251";
 
 let bluesGeekInfo = eventbrite.GETeventDetails(bluesGeekID);
 
-// let ticketClasses = event.ticket_classes;
-
-// if (let i = 0; i < ticketClasses.length; i++) {  //for the length of the ticketClasses array
-//     let newTicketObj = grabDetails(ticketClasses[i]);   // Get each ticket class and get return each non-null property and store in a new object
-//     return buildTicketHTML(newTicketObj); // build the ticket html with the new ticket object
-// };
+let grabEachObj = (arrayOfObjects) => {
+    console.log('arrayOfObject function:', arrayOfObjects);
+    for(let i = 0; i < arrayOfObjects.length; i++) {
+    let eachObject = arrayOfObjects[i];
+    console.log('eachObject', eachObject);
+    grabDetails(eachObject);
+    console.log('arrayOfObjects after:', arrayOfObjects);
+    return arrayOfObjects;
+    }
+};
 
 let grabDetails = (object) => {
     console.log("object is", object);
@@ -29,32 +33,31 @@ let grabDetails = (object) => {
     return object;
 };
 
-let fakeObjArray = [
-    {
-        "red" : null,
-        "blue" : "#0000ff",
-        "green" : undefined,
-        "yellow" : "ochre",
-        "white" : "#fff",
-        "purple" : null
-    },
-    {
-        "cat" : true,
-        "dog" : 2,
-        "horse" : "one",
-        "snake" : null,
-        "hielo" : undefined,
-        "parrot" : "none",
-    },
-    {
-        "agriculture" : "BS",
-        "math" : null,
-        "html" : true,
-        "javascript" : "in progress"
-    }
-];
+// let fakeObjArray = [
+//     {
+//         "red" : null,
+//         "blue" : "#0000ff",
+//         "green" : undefined,
+//         "yellow" : "ochre",
+//         "white" : "#fff",
+//         "purple" : null
+//     },
+//     {
+//         "cat" : true,
+//         "dog" : 2,
+//         "horse" : "one",
+//         "snake" : null,
+//         "hielo" : undefined,
+//         "parrot" : "none",
+//     },
+//     {
+//         "agriculture" : "BS",
+//         "math" : null,
+//         "html" : true,
+//         "javascript" : "in progress"
+//     }
+// ];
 
-grabDetails(fakeObj);
+// grabEachObj(bluesGeekInfo);
 
-
-// console.log(bluesGeekInfo);
+console.log(bluesGeekInfo);
