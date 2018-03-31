@@ -80,4 +80,14 @@ $('#deleteProfile').click(function() {
 
 ////Build profile page with currentUser
 
+if( $('.profilePage').length > 0) {
+    console.log('build profile here');
+}
+
+///Build Registration Page with API Info
+
+if( $('#registrationDetails').length > 0 ) {
+    registration.printRegistrationDetails();
+}
+
 console.log('end main.js');
