@@ -1,24 +1,13 @@
 "use strict";
 
-let gcallAPI = require("./_callAPIs");
+//// Module calls
+let callAPI = require("./_callAPIs");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");
 let userProfile = require("./_buildProfile"); 
+let registration = require("./_registration");
 
-//// Organizer IDs
-const pinellID = "9863217585";
-const shippID = "17088682251";
-
-//// API calls
-
-// let orgShipp = callAPI.GETorganizer(shippID);
-
-// callAPI.eventbriteCall(orgShipp);
-
-// let pinellEvents = callAPI.GETorganizerEvents(pinellID);
-
-// callAPI.eventbriteCall(pinellEvents);
 
 //// Menu Button
 $('#btn_menu').click(function () {
@@ -90,5 +79,15 @@ $('#deleteProfile').click(function() {
 });
 
 ////Build profile page with currentUser
+
+if( $('.profilePage').length > 0) {
+    console.log('build profile here');
+}
+
+///Build Registration Page with API Info
+
+if( $('#registrationDetails').length > 0 ) {
+    registration.printRegistrationDetails();
+}
 
 console.log('end main.js');
