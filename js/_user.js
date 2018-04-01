@@ -10,13 +10,13 @@ let currentUser = {
     lastName: null,
     email: null,
     password: null,
-    streetAddress: null,
+    street: null,
     city: null,
     state: null,
     zipcode: null,
     country: null,
     community: null,
-    fbid: null
+    fbID: null
 };
 
 //listen for changed state
@@ -53,17 +53,18 @@ let makeNewUser = (uid, fbID) => {
 let setUserVars = (obj) => {
     console.log('user.setUserVars: obj', obj);
     return new Promise((resolve, reject) => {
-        currentUser.firstName = obj.firstName ? obj.FirstName : currentUser.firstName;
+        currentUser.firstName = obj.firstName ? obj.firstName : currentUser.firstName;
         currentUser.lastName = obj.lastName ? obj.lastName : currentUser.lastName;
         currentUser.email = obj.email ? obj.email : currentUser.email;
         currentUser.password = obj.password ? obj.password : currentUser.password;
-        currentUser.streetAddress = obj.streetAddress ? obj.streetAddress : currentUser.streetAddress;
+        currentUser.street = obj.street ? obj.street : currentUser.street;
         currentUser.city = obj.city ? obj.city : currentUser.city;
         currentUser.state = obj.state ? obj.state : currentUser.state;
         currentUser.zipcode = obj.zipcode ? obj.zipcode : currentUser.zipcode;
         currentUser.country = obj.country ? obj.country : currentUser.country;
         currentUser.community = obj.community ? obj.community : currentUser.community;
-        currentUser.fbid = obj.fbid ? obj.fbid : currentUser.fbid;
+        currentUser.fbID = obj.fbID ? obj.fbID : currentUser.fbID;
+        console.log('setUserVars updated currentUser', currentUser);
         resolve(currentUser);
     });
 };
@@ -85,11 +86,11 @@ let checkForUser = (uid) => {
             });
         } else {
             console.log('user exists', data);
-            let key = Object.keys(result);
-            data[0].fbID = key[0];
+            // let key = Object.keys(result);
+            // data[0].fbID = key[0];
             setUserVars(data[0])
             .then((resolve) => {
-                console.log(resolve);
+                console.log('login resolve:', resolve);
             });
         }
     });
@@ -141,4 +142,4 @@ let clearUserLocally = (userObj) => {
 };
 
 
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally };
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally };

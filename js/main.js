@@ -24,6 +24,7 @@ $('#signIn').click(function () {
         user.setUser(result.user.uid);
         menuFunc.hideShowMultElement('#signIn', '#signOut');
         user.checkForUser(result.user.uid);
+        user.storeUserLocally(result.user.uid);
     });
 });
 
@@ -31,7 +32,7 @@ $('#signOut').click(function () {
     console.log('signOut clicked');
     fbInteraction.logOut();
     menuFunc.hideShowMultElement('#signOut', '#signIn');
-    // menuFunc.hideShowMultElement('#signOut', '#signIn');
+    user.clearUserLocally();
 });
 
 //// Edit, Save, Delete Profile
