@@ -131,12 +131,14 @@ let buildNewUser = (userObj) => {
 };
 
 let storeUserLocally = (userObj) => {
-
+    console.log('Stored Current User', userObj);
+    // localStorage.setItem('currentUser', userObj);
 };
 
 let clearUserLocally = (userObj) => {
-
+    console.log('cleared Current User:', userObj);
+    // localStorage.removeItem("currentUser");
 };
 
 
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser };
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally };
