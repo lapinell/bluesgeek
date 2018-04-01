@@ -130,4 +130,13 @@ let buildNewUser = (userObj) => {
     });
 };
 
+let storeUserLocally = (userObj) => {
+
+};
+
+let clearUserLocally = (userObj) => {
+
+};
+
+
 module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser };
