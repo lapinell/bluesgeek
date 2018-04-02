@@ -12,24 +12,38 @@ let buildMainNav = (htmlPartial) => {
 let updateNav = (nID) => {
     console.log('updating nav');
     for (let prop in buildNav.submenus) {
-        console.log('nid is', nID);
-        console.log('prop is', prop);
         if (prop == nID) {
             console.log('building nav partial');
             buildMainNav(buildNav.submenus[prop]);
         }
     }   
+    activateEvents();
+};
+
+let activateEvents = () => {
+    $('#back').on("click", function(){
+        console.log('activated back button');
+    });
+    $('#profile').on("click", function(){
+        console.log('activated back button');
+    });
+    $('signIn').on("click", function(){
+        console.log('activated back button');
+    });
+    $('signOut').on("click", function(){
+        console.log('activated back button');
+    });
 };
 
 buildMainNav(buildNav.submenus.firstNav);
 
-$('#menu li a').click( function() { //when a #menu list a item is clicked, fire the function to
+$('#menu li a').on("click", function() { //when a #menu list a item is clicked, fire the function to
     console.log('menu item clicked', this.id); // console log which menu item has been clicked by id
     let navID = this.id; //store the id in the NavID variable
     updateNav(navID);//update the #menu part of the nav with the html matching the NavID
 });
 
-$('a#back').on('click', function() {
+$('#back').on("click", function() {
     console.log('back to main nav');
     buildMainNav(buildNav.submenus.firstNav);
 });
