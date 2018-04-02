@@ -10,27 +10,25 @@ let currentUser = {
     lastName: null,
     email: null,
     password: null,
-    streetAddress: null,
+    street: null,
     city: null,
     state: null,
     zipcode: null,
     country: null,
     community: null,
-    fbid: null
+    fbID: null
 };
 
 //listen for changed state
 firebase.auth().onAuthStateChanged((user) => {
-    console.log("onAuthStateChanged", user);
-        if (user) {
+        console.log("onAuthStateChanged", user);
+        if (user) { // if a user is signed in
             currentUser.uid = user.uid;
-            console.log("current user logged in:", currentUser);
             menuFunc.hideShowMultElement('#signIn', '#signOut');
-        } else if (null) {
+        } else {
             currentUser.uid = null;
-            console.log("user not logged in", currentUser);
         }
-});
+});             
 
 let makeNewUser = (uid, fbID) => {
     let userObj = {
@@ -53,17 +51,18 @@ let makeNewUser = (uid, fbID) => {
 let setUserVars = (obj) => {
     console.log('user.setUserVars: obj', obj);
     return new Promise((resolve, reject) => {
-        currentUser.firstName = obj.firstName ? obj.FirstName : currentUser.firstName;
+        currentUser.firstName = obj.firstName ? obj.firstName : currentUser.firstName;
         currentUser.lastName = obj.lastName ? obj.lastName : currentUser.lastName;
         currentUser.email = obj.email ? obj.email : currentUser.email;
         currentUser.password = obj.password ? obj.password : currentUser.password;
-        currentUser.streetAddress = obj.streetAddress ? obj.streetAddress : currentUser.streetAddress;
+        currentUser.street = obj.street ? obj.street : currentUser.street;
         currentUser.city = obj.city ? obj.city : currentUser.city;
         currentUser.state = obj.state ? obj.state : currentUser.state;
         currentUser.zipcode = obj.zipcode ? obj.zipcode : currentUser.zipcode;
         currentUser.country = obj.country ? obj.country : currentUser.country;
         currentUser.community = obj.community ? obj.community : currentUser.community;
-        currentUser.fbid = obj.fbid ? obj.fbid : currentUser.fbid;
+        currentUser.fbID = obj.fbID ? obj.fbID : currentUser.fbID;
+        console.log('setUserVars updated currentUser', currentUser);
         resolve(currentUser);
     });
 };
@@ -72,25 +71,23 @@ let setUserVars = (obj) => {
 let checkForUser = (uid) => {
     fbInteraction.getFBdetails(uid)
     .then((result) => {
-        console.log('result', result);
         let data = Object.values(result);
-        console.log("result data:", data.length);
         if (data.length === 0) {
-            console.log('need to create user');
-            console.log('creating profile for', uid);
             fbInteraction.addUserFB(makeNewUser(uid)) //making new user in firebase
             .then((result) => {
-                console.log('new user added to firebase', result);
                 document.location.replace('edit-profile.html');
             });
         } else {
-            console.log('user exists', data);
-            let key = Object.keys(result);
-            data[0].fbID = key[0];
             setUserVars(data[0])
             .then((resolve) => {
-                console.log(resolve);
+                if ( storageAvailable('localStorage') ) {
+                    storeUserLocally(currentUser);
+                } else {
+                    console.log('Local Storage is not available.');
+                }
+                
             });
+            menuFunc.hideShowMultElement('#signIn', '#signOut');
         }
     });
 };
@@ -130,4 +127,40 @@ let buildNewUser = (userObj) => {
     });
 };
 
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser };
+// Local Storage of User
+
+let storageAvailable = (type) => {
+    var storage = window[type],
+    x = '__storage_test__';
+    try {
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return false;
+    }
+};
+
+
+
+let storeUserLocally = (userObj) => {
+    console.log('Storing currentUser locally', userObj);
+    for (let prop in userObj) {
+        // console.log('prop:', prop);
+        // console.log('userObj[prop]', userObj[prop]);
+        localStorage.setItem( "CU" + prop, userObj[prop] );
+    }
+    console.log('Retrieving locally store user inside storeUser function', localStorage.getItem("CUuid"));
+};
+
+let clearUserLocally = () => {
+    console.log('cleared currentUser locally:', currentUser);
+    for (let prop in currentUser) {
+        localStorage.removeItem("CU" + prop);
+    }
+    console.log('Retrieving locally store user inside clearUser function', localStorage.getItem("CUuid"));
+};
+
+
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally };
