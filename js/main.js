@@ -11,7 +11,6 @@ let registration = require("./_registration");
 
 //// Menu Button
 $('#btn_menu').click(function () {
-    console.log('menu button activated');
     menuFunc.hideElement('nav');
 });
 
@@ -20,11 +19,9 @@ $('#signIn').click(function () {
     console.log('signIn clicked');
     fbInteraction.logInGoogle()
     .then( (result) => {
-        console.log("result from login", result.user.uid);
         user.setUser(result.user.uid);
         menuFunc.hideShowMultElement('#signIn', '#signOut');
         user.checkForUser(result.user.uid);
-        user.storeUserLocally(result.user.uid);
     });
 });
 
@@ -90,5 +87,3 @@ if( $('.profilePage').length > 0) {
 if( $('#registrationDetails').length > 0 ) {
     registration.printRegistrationDetails();
 }
-
-console.log('end main.js');
