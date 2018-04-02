@@ -53,12 +53,12 @@ $('.saveProfile').click(function() {
     });
 });
 
-$('#editProfile').click(function() {
+$('#editUser').click(function() {
     console.log('edit profile button clicked');
     document.location.replace('edit-profile.html');
 });
 
-$('#deleteProfile').click(function() {
+$('#deleteUser').click(function() {
     console.log('delete profile button clicked');
     let userToDelete = user.getUserObj();
     fbInteraction.getFBdetails(userToDelete.uid)
@@ -74,6 +74,20 @@ $('#deleteProfile').click(function() {
         document.location.replace('index.html');
     });
 });
+
+////Prefill form when user exists
+
+// When edit-profile.html loads && local user is stored
+// then prefill form with current user values
+
+if ( $('#editProfile').length > 0 && localStorage.getItem('CUuid') !== null)  {
+    console.log('editing profile now');
+    console.log('editProfile.length', $('#editProfile').length);
+
+} else {
+    console.log('not editing profile');
+    console.log('editProfile.length', $('#editProfile').length);
+}
 
 ////Build profile page with currentUser
 
