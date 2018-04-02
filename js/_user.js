@@ -155,10 +155,10 @@ let storeUserLocally = (userObj) => {
 };
 
 let clearUserLocally = () => {
-    console.log('cleared currentUser locally:', currentUser);
     for (let prop in currentUser) {
         localStorage.removeItem("CU" + prop);
     }
+    console.log('cleared currentUser locally:', currentUser);
     console.log('Retrieving locally store user inside clearUser function', localStorage.getItem("CUuid"));
 };
 
