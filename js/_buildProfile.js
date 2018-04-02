@@ -21,7 +21,6 @@ let buildProfile = (userObj) => {
             <h3>Account Settings</h3>
             <button id="editUser">Edit Account</button>
             <button id="deleteUser">Delete Account</button>
-            <button id="resetUserPassword">Change Password</button>
         </div>
     </section>`;
     $('#userProfile').html(profileHTML);
