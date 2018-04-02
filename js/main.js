@@ -80,6 +80,10 @@ $('#deleteProfile').click(function() {
 
 if( $('.profilePage').length > 0) {
     console.log('build profile here');
+    user.getUserLocally()
+    .then((currentUser) => {
+        userProfile.buildProfile(currentUser);
+    }); 
 }
 
 ///Build Registration Page with API Info

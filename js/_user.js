@@ -142,8 +142,6 @@ let storageAvailable = (type) => {
     }
 };
 
-
-
 let storeUserLocally = (userObj) => {
     console.log('Storing currentUser locally', userObj);
     for (let prop in userObj) {
@@ -152,11 +150,14 @@ let storeUserLocally = (userObj) => {
 };
 
 let getUserLocally = () => {
+    return new Promise((resolve) => {
     console.log('the current user obj:', currentUser);
         for (let prop in currentUser) {
             currentUser[prop] = localStorage.getItem("CU" + prop);
         }
     console.log('the updated currentUser obj:', currentUser);
+    resolve(currentUser);
+    });
 };
 
 let clearUserLocally = () => {
@@ -166,6 +167,4 @@ let clearUserLocally = () => {
     }
 };
 
-getUserLocally();
-
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally };
+module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally, getUserLocally };
