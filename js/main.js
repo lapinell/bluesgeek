@@ -2,7 +2,6 @@
 
 //// Module calls
 let callAPI = require("./_callAPIs");
-let nav = require("./_buildNav");
 let menuFunc = require("./_menu");
 let fbInteraction = require("./_firebase-interaction");
 let user = require("./_user");

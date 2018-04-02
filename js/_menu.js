@@ -1,5 +1,41 @@
 "use strict";
 
+let buildNav = require("./_buildNav");
+
+//// Build Nav
+
+let buildMainNav = (htmlPartial) => {
+    $('nav').html(buildNav.mainNav); // find nav and put mainNav html inside
+    $('nav #menu').html(htmlPartial);
+};
+
+let updateNav = (nID) => {
+    console.log('updating nav');
+    for (let prop in buildNav.submenus) {
+        console.log('nid is', nID);
+        console.log('prop is', prop);
+        if (prop == nID) {
+            console.log('building nav partial');
+            buildMainNav(buildNav.submenus[prop]);
+        }
+    }   
+};
+
+buildMainNav(buildNav.submenus.firstNav);
+
+$('#menu li a').click( function() { //when a #menu list a item is clicked, fire the function to
+    console.log('menu item clicked', this.id); // console log which menu item has been clicked by id
+    let navID = this.id; //store the id in the NavID variable
+    updateNav(navID);//update the #menu part of the nav with the html matching the NavID
+});
+
+$('a#back').on('click', function() {
+    console.log('back to main nav');
+    buildMainNav(buildNav.submenus.firstNav);
+});
+
+// Account Buttons
+
 function hideElement (element) {
     if( $(element).attr('hidden') == "hidden" ){ //if navigation is hidden
         $(element).removeAttr('hidden');//show navigation
@@ -18,4 +54,4 @@ function hideShowMultElement (element1, element2) {
     }
 }
 
-module.exports = {hideElement, hideShowMultElement};
+module.exports = {hideElement, hideShowMultElement, buildMainNav, };
