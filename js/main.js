@@ -15,22 +15,22 @@ $('#btn_menu').click(function () {
 });
 
 //// Sign In and Out Buttons
-$('#signIn').click(function () {
-    console.log('signIn clicked');
-    fbInteraction.logInGoogle()
-    .then( (result) => {
-        user.setUser(result.user.uid);
-        menuFunc.hideShowMultElement('#signIn', '#signOut');
-        user.checkForUser(result.user.uid);
-    });
-});
+// $('#signIn').click(function () {
+//     console.log('signIn clicked');
+//     fbInteraction.logInGoogle()
+//     .then( (result) => {
+//         user.setUser(result.user.uid);
+//         menuFunc.hideShowMultElement('#signIn', '#signOut');
+//         user.checkForUser(result.user.uid);
+//     });
+// });
 
-$('#signOut').click(function () {
-    console.log('signOut clicked');
-    fbInteraction.logOut();
-    menuFunc.hideShowMultElement('#signOut', '#signIn');
-    user.clearUserLocally();
-});
+// $('#signOut').click(function () {
+//     console.log('signOut clicked');
+//     fbInteraction.logOut();
+//     menuFunc.hideShowMultElement('#signOut', '#signIn');
+//     user.clearUserLocally();
+// });
 
 //// Edit, Save, Delete Profile
 $('.saveProfile').click(function() {

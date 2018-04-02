@@ -1,52 +1,8 @@
 "use strict";
 
-let buildNav = require("./_buildNav");
-
-//// Build Nav
-
-let buildMainNav = (htmlPartial) => {
-    $('nav').html(buildNav.mainNav); // find nav and put mainNav html inside
-    $('nav #menu').html(htmlPartial);
-};
-
-let updateNav = (nID) => {
-    console.log('updating nav');
-    for (let prop in buildNav.submenus) {
-        if (prop == nID) {
-            console.log('building nav partial');
-            buildMainNav(buildNav.submenus[prop]);
-        }
-    }   
-    activateEvents();
-};
-
-let activateEvents = () => {
-    $('#back').on("click", function(){
-        console.log('activated back button');
-    });
-    $('#profile').on("click", function(){
-        console.log('activated back button');
-    });
-    $('signIn').on("click", function(){
-        console.log('activated back button');
-    });
-    $('signOut').on("click", function(){
-        console.log('activated back button');
-    });
-};
-
-buildMainNav(buildNav.submenus.firstNav);
-
-$('#menu li a').on("click", function() { //when a #menu list a item is clicked, fire the function to
-    console.log('menu item clicked', this.id); // console log which menu item has been clicked by id
-    let navID = this.id; //store the id in the NavID variable
-    updateNav(navID);//update the #menu part of the nav with the html matching the NavID
-});
-
-$('#back').on("click", function() {
-    console.log('back to main nav');
-    buildMainNav(buildNav.submenus.firstNav);
-});
+let buildNav = require("./_buildNav"),
+    user = require("./_user"),
+    fbInteraction = require("./_firebase-interaction");
 
 // Account Buttons
 
@@ -67,5 +23,62 @@ function hideShowMultElement (element1, element2) {
         $(element1).removeAttr('hidden');//and show element 1
     }
 }
+
+//// Build Nav
+
+let buildMainNav = (htmlPartial) => {
+    $('nav').html(buildNav.mainNav); // find nav and put mainNav html inside
+    $('nav #menu').html(htmlPartial);
+    activateEvents();
+};
+
+let updateNav = (nID) => {
+    for (let prop in buildNav.submenus) {
+        if (prop == nID) {
+            buildMainNav(buildNav.submenus[prop]);
+        }
+    }   
+
+};
+
+let activateEvents = () => {
+    $('#btn_menu').click(function () {
+        hideElement('nav');
+    });
+    $('#menu li a').on("click", function() { //when a #menu list a item is clicked, fire the function to
+        let navID = this.id; //store the id in the NavID variable
+        console.log('activated', navID, 'item' );
+        updateNav(navID);//update the #menu part of the nav with the html matching the NavID
+    });
+    $('#back').on("click", function(){
+        console.log('activated back button');
+        buildMainNav(buildNav.submenus.firstNav);
+    });
+    $('#profile').on("click", function(){
+        console.log('activated profile button');
+    });
+    $('#signIn').on("click", function(){
+        console.log('activated signin button');
+        fbInteraction.logInGoogle()
+        .then( (result) => {
+            user.setUser(result.user.uid);
+            hideShowMultElement('#signIn', '#signOut');
+            user.checkForUser(result.user.uid);
+        });
+    });
+    $('#signOut').on("click", function(){
+        console.log('activated signout button');
+        fbInteraction.logOut();
+        hideShowMultElement('#signOut', '#signIn');
+        user.clearUserLocally();
+    });
+};
+
+
+// Active Nav
+
+buildMainNav(buildNav.submenus.firstNav);
+
+activateEvents();
 
 module.exports = {hideElement, hideShowMultElement, buildMainNav, };
