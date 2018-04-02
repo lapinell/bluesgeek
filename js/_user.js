@@ -85,8 +85,9 @@ let checkForUser = (uid) => {
                 } else {
                     console.log('Local Storage is not available.');
                 }
-                menuFunc.hideShowMultElement('#signIn', '#signOut');
+                
             });
+            menuFunc.hideShowMultElement('#signIn', '#signOut');
         }
     });
 };
