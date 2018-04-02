@@ -48,11 +48,10 @@ $('.saveProfile').click(function() {
     })
     .then( (result) => { 
         console.log('user updated?', result);
+        user.storeUserLocally(result);
         document.location.replace('profile.html');
     });
-    //get values from form and store in current user//update user in firebase
 });
-    // redirect to profile page with newly added values});
 
 $('#editProfile').click(function() {
     console.log('edit profile button clicked');
