@@ -82,11 +82,8 @@ $('#deleteUser').click(function() {
 
 if ( $('#editProfile').length > 0 && localStorage.getItem('CUuid') !== null)  {
     console.log('editing profile now');
-    console.log('editProfile.length', $('#editProfile').length);
+    user.fillProfileForm("test");
 
-} else {
-    console.log('not editing profile');
-    console.log('editProfile.length', $('#editProfile').length);
 }
 
 ////Build profile page with currentUser

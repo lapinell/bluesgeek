@@ -127,6 +127,12 @@ let buildNewUser = (userObj) => {
     });
 };
 
+// Fill Form with Existing Values
+
+let fillProfileForm = (userobj) => {
+    console.log("filling form with exiting user:", userobj);
+}
+
 // Local Storage of User
 
 let storageAvailable = (type) => {
@@ -167,4 +173,4 @@ let clearUserLocally = () => {
     }
 };
 
-module.exports = { checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally, getUserLocally };
+module.exports = { fillProfileForm, checkForUser, getUser, getUserObj, buildNewUser, setUser, storeUserLocally, clearUserLocally, getUserLocally };
