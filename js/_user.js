@@ -161,7 +161,6 @@ let getUserLocally = () => {
 };
 
 let clearUserLocally = () => {
-    console.log('cleared currentUser locally:', currentUser);
     for (let prop in currentUser) {
         localStorage.removeItem("CU" + prop);
     }
