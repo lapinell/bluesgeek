@@ -75,7 +75,7 @@ let checkForUser = (uid) => {
         if (data.length === 0) {
             fbInteraction.addUserFB(makeNewUser(uid)) //making new user in firebase
             .then((result) => {
-                document.location.replace('edit-profile.html');
+                document.location.replace('new-profile.html');
             });
         } else {
             setUserVars(data[0])
@@ -129,8 +129,20 @@ let buildNewUser = (userObj) => {
 
 // Fill Form with Existing Values
 
-let fillProfileForm = (userobj) => {
-    console.log("filling form with exiting user:", userobj);
+let fillProfileForm = () => {
+    getUserLocally()
+    .then((currentUser) => {
+        console.log('currentUser now:', currentUser);
+            $("#firstName").val(currentUser.firstName);
+            $("#lastName").val(currentUser.lastName);
+            $("#email").val(currentUser.email);
+            $("#streetAddress").val(currentUser.street);
+            $("#city").val(currentUser.city);
+            $("#state").val(currentUser.state);
+            $("#zipcode").val(currentUser.zipcode);
+            $("#country").val(currentUser.country);
+            $("#community").val(currentUser.community);
+    });
 };
 
 // Local Storage of User

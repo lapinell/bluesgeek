@@ -67,7 +67,7 @@ $('#deleteUser').click(function() {
 
 if ( $('#editProfile').length > 0 && localStorage.getItem('CUuid') !== null)  {
     console.log('editing profile now');
-    user.fillProfileForm("test");
+    user.fillProfileForm();
 
 }
 
