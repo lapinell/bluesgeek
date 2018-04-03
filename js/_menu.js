@@ -42,9 +42,6 @@ let updateNav = (nID) => {
 };
 
 let activateEvents = () => {
-    $('#btn_menu').click(function () {
-        hideElement('nav');
-    });
     $('#menu li a').on("click", function() { //when a #menu list a item is clicked, fire the function to
         let navID = this.id; //store the id in the NavID variable
         console.log('activated', navID, 'item' );
@@ -79,6 +76,4 @@ let activateEvents = () => {
 
 buildMainNav(buildNav.submenus.firstNav);
 
-activateEvents();
-
-module.exports = {hideElement, hideShowMultElement, buildMainNav, };
+module.exports = {hideElement, hideShowMultElement, buildMainNav, activateEvents};

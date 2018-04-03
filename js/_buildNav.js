@@ -6,7 +6,7 @@ let mainNav = `
                     <a id="back" class="nav-link" href="#">Back</a>
                 </li>
                 <li class="nav-item">
-                    <a id="profile" class="nav-link" href="#">Your Profile</a>
+                    <a id="profile" class="nav-link" href="profile.html">Your Profile</a>
                 </li>
             </ul>
             <ul id="menu" class="nav flex-column">
