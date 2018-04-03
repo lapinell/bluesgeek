@@ -17,11 +17,6 @@ let buildProfile = (userObj) => {
             <p id="userAddress"><strong>Address:</strong> ${userObj.streetAddress} ${userObj.city}, ${userObj.state} ${userObj.zipcode}</p>
             <p id="userCommunity"><strong>Primary Dance Community:</strong> ${userObj.community}</p>
         </div>
-        <div id="editInfo" class="card">
-            <h3>Account Settings</h3>
-            <button id="editUser">Edit Account</button>
-            <button id="deleteUser">Delete Account</button>
-        </div>
     </section>`;
     $('#userProfile').html(profileHTML);
 };

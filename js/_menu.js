@@ -29,7 +29,7 @@ function hideShowMultElement (element1, element2) {
 let buildMainNav = (htmlPartial) => {
     $('nav').html(buildNav.mainNav); // find nav and put mainNav html inside
     $('nav #menu').html(htmlPartial);
-    activateEvents();
+    activateNavEvents();
 };
 
 let updateNav = (nID) => {
@@ -41,7 +41,7 @@ let updateNav = (nID) => {
 
 };
 
-let activateEvents = () => {
+let activateNavEvents = () => {
     $('#menu li a').on("click", function() { //when a #menu list a item is clicked, fire the function to
         let navID = this.id; //store the id in the NavID variable
         console.log('activated', navID, 'item' );
@@ -53,6 +53,7 @@ let activateEvents = () => {
     });
     $('#profile').on("click", function(){
         console.log('activated profile button');
+        document.location.replace('profile.html');
     });
     $('#signIn').on("click", function(){
         console.log('activated signin button');
@@ -76,4 +77,4 @@ let activateEvents = () => {
 
 buildMainNav(buildNav.submenus.firstNav);
 
-module.exports = {hideElement, hideShowMultElement, buildMainNav, activateEvents};
+module.exports = {hideElement, hideShowMultElement, buildMainNav, activateNavEvents};
