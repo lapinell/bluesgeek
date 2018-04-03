@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log("onAuthStateChanged", user);
         if (user) { // if a user is signed in
             currentUser.uid = user.uid;
-            menuFunc.hideShowMultElement('#signIn', '#signOut');
+            // menuFunc.hideShowMultElement('#signIn', '#signOut');
         } else {
             currentUser.uid = null;
         }
@@ -131,7 +131,7 @@ let buildNewUser = (userObj) => {
 
 let fillProfileForm = (userobj) => {
     console.log("filling form with exiting user:", userobj);
-}
+};
 
 // Local Storage of User
 

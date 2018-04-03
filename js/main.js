@@ -15,7 +15,7 @@ $('#btn_menu').click(function () {
     menuFunc.hideElement('nav');
 });
 
-menuFunc.activateEvents();
+menuFunc.activateNavEvents();
 
 //// Edit, Save, Delete Profile
 $('.saveProfile').click(function() {
