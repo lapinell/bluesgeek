@@ -33,11 +33,10 @@ $('.saveProfile').click(function() {
     })
     .then( (result) => { 
         console.log('user updated?', result);
+        user.storeUserLocally(result);
         document.location.replace('profile.html');
     });
-    //get values from form and store in current user//update user in firebase
 });
-    // redirect to profile page with newly added values});
 
 $('#editProfile').click(function() {
     console.log('edit profile button clicked');
@@ -65,6 +64,10 @@ $('#deleteProfile').click(function() {
 
 if( $('.profilePage').length > 0) {
     console.log('build profile here');
+    user.getUserLocally()
+    .then((currentUser) => {
+        userProfile.buildProfile(currentUser);
+    }); 
 }
 
 ///Build Registration Page with API Info
